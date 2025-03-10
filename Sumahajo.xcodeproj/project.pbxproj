@@ -1,0 +1,581 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EFA958122D7F82AA00BE0939 /* SumahajoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA958112D7F82AA00BE0939 /* SumahajoApp.swift */; };
+		EFA958142D7F82AA00BE0939 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA958132D7F82AA00BE0939 /* ContentView.swift */; };
+		EFA958162D7F82AB00BE0939 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFA958152D7F82AB00BE0939 /* Assets.xcassets */; };
+		EFA958192D7F82AB00BE0939 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFA958182D7F82AB00BE0939 /* Preview Assets.xcassets */; };
+		EFA958242D7F82AB00BE0939 /* SumahajoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA958232D7F82AB00BE0939 /* SumahajoTests.swift */; };
+		EFA9582E2D7F82AB00BE0939 /* SumahajoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA9582D2D7F82AB00BE0939 /* SumahajoUITests.swift */; };
+		EFA958302D7F82AB00BE0939 /* SumahajoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA9582F2D7F82AB00BE0939 /* SumahajoUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EFA958202D7F82AB00BE0939 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EFA958062D7F82AA00BE0939 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EFA9580D2D7F82AA00BE0939;
+			remoteInfo = Sumahajo;
+		};
+		EFA9582A2D7F82AB00BE0939 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EFA958062D7F82AA00BE0939 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EFA9580D2D7F82AA00BE0939;
+			remoteInfo = Sumahajo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EFA9580E2D7F82AA00BE0939 /* Sumahajo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sumahajo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EFA958112D7F82AA00BE0939 /* SumahajoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SumahajoApp.swift; sourceTree = "<group>"; };
+		EFA958132D7F82AA00BE0939 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		EFA958152D7F82AB00BE0939 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EFA958182D7F82AB00BE0939 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		EFA9581A2D7F82AB00BE0939 /* Sumahajo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Sumahajo.entitlements; sourceTree = "<group>"; };
+		EFA9581F2D7F82AB00BE0939 /* SumahajoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SumahajoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EFA958232D7F82AB00BE0939 /* SumahajoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SumahajoTests.swift; sourceTree = "<group>"; };
+		EFA958292D7F82AB00BE0939 /* SumahajoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SumahajoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EFA9582D2D7F82AB00BE0939 /* SumahajoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SumahajoUITests.swift; sourceTree = "<group>"; };
+		EFA9582F2D7F82AB00BE0939 /* SumahajoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SumahajoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EFA9580B2D7F82AA00BE0939 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EFA9581C2D7F82AB00BE0939 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EFA958262D7F82AB00BE0939 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EFA958052D7F82AA00BE0939 = {
+			isa = PBXGroup;
+			children = (
+				EFA958102D7F82AA00BE0939 /* Sumahajo */,
+				EFA958222D7F82AB00BE0939 /* SumahajoTests */,
+				EFA9582C2D7F82AB00BE0939 /* SumahajoUITests */,
+				EFA9580F2D7F82AA00BE0939 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EFA9580F2D7F82AA00BE0939 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EFA9580E2D7F82AA00BE0939 /* Sumahajo.app */,
+				EFA9581F2D7F82AB00BE0939 /* SumahajoTests.xctest */,
+				EFA958292D7F82AB00BE0939 /* SumahajoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EFA958102D7F82AA00BE0939 /* Sumahajo */ = {
+			isa = PBXGroup;
+			children = (
+				EFA958112D7F82AA00BE0939 /* SumahajoApp.swift */,
+				EFA958132D7F82AA00BE0939 /* ContentView.swift */,
+				EFA958152D7F82AB00BE0939 /* Assets.xcassets */,
+				EFA9581A2D7F82AB00BE0939 /* Sumahajo.entitlements */,
+				EFA958172D7F82AB00BE0939 /* Preview Content */,
+			);
+			path = Sumahajo;
+			sourceTree = "<group>";
+		};
+		EFA958172D7F82AB00BE0939 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				EFA958182D7F82AB00BE0939 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		EFA958222D7F82AB00BE0939 /* SumahajoTests */ = {
+			isa = PBXGroup;
+			children = (
+				EFA958232D7F82AB00BE0939 /* SumahajoTests.swift */,
+			);
+			path = SumahajoTests;
+			sourceTree = "<group>";
+		};
+		EFA9582C2D7F82AB00BE0939 /* SumahajoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EFA9582D2D7F82AB00BE0939 /* SumahajoUITests.swift */,
+				EFA9582F2D7F82AB00BE0939 /* SumahajoUITestsLaunchTests.swift */,
+			);
+			path = SumahajoUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EFA9580D2D7F82AA00BE0939 /* Sumahajo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EFA958332D7F82AB00BE0939 /* Build configuration list for PBXNativeTarget "Sumahajo" */;
+			buildPhases = (
+				EFA9580A2D7F82AA00BE0939 /* Sources */,
+				EFA9580B2D7F82AA00BE0939 /* Frameworks */,
+				EFA9580C2D7F82AA00BE0939 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Sumahajo;
+			productName = Sumahajo;
+			productReference = EFA9580E2D7F82AA00BE0939 /* Sumahajo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EFA9581E2D7F82AB00BE0939 /* SumahajoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EFA958362D7F82AB00BE0939 /* Build configuration list for PBXNativeTarget "SumahajoTests" */;
+			buildPhases = (
+				EFA9581B2D7F82AB00BE0939 /* Sources */,
+				EFA9581C2D7F82AB00BE0939 /* Frameworks */,
+				EFA9581D2D7F82AB00BE0939 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EFA958212D7F82AB00BE0939 /* PBXTargetDependency */,
+			);
+			name = SumahajoTests;
+			productName = SumahajoTests;
+			productReference = EFA9581F2D7F82AB00BE0939 /* SumahajoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EFA958282D7F82AB00BE0939 /* SumahajoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EFA958392D7F82AB00BE0939 /* Build configuration list for PBXNativeTarget "SumahajoUITests" */;
+			buildPhases = (
+				EFA958252D7F82AB00BE0939 /* Sources */,
+				EFA958262D7F82AB00BE0939 /* Frameworks */,
+				EFA958272D7F82AB00BE0939 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EFA9582B2D7F82AB00BE0939 /* PBXTargetDependency */,
+			);
+			name = SumahajoUITests;
+			productName = SumahajoUITests;
+			productReference = EFA958292D7F82AB00BE0939 /* SumahajoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EFA958062D7F82AA00BE0939 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					EFA9580D2D7F82AA00BE0939 = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+					EFA9581E2D7F82AB00BE0939 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = EFA9580D2D7F82AA00BE0939;
+					};
+					EFA958282D7F82AB00BE0939 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = EFA9580D2D7F82AA00BE0939;
+					};
+				};
+			};
+			buildConfigurationList = EFA958092D7F82AA00BE0939 /* Build configuration list for PBXProject "Sumahajo" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EFA958052D7F82AA00BE0939;
+			productRefGroup = EFA9580F2D7F82AA00BE0939 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EFA9580D2D7F82AA00BE0939 /* Sumahajo */,
+				EFA9581E2D7F82AB00BE0939 /* SumahajoTests */,
+				EFA958282D7F82AB00BE0939 /* SumahajoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EFA9580C2D7F82AA00BE0939 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EFA958192D7F82AB00BE0939 /* Preview Assets.xcassets in Resources */,
+				EFA958162D7F82AB00BE0939 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EFA9581D2D7F82AB00BE0939 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EFA958272D7F82AB00BE0939 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EFA9580A2D7F82AA00BE0939 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EFA958142D7F82AA00BE0939 /* ContentView.swift in Sources */,
+				EFA958122D7F82AA00BE0939 /* SumahajoApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EFA9581B2D7F82AB00BE0939 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EFA958242D7F82AB00BE0939 /* SumahajoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EFA958252D7F82AB00BE0939 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EFA958302D7F82AB00BE0939 /* SumahajoUITestsLaunchTests.swift in Sources */,
+				EFA9582E2D7F82AB00BE0939 /* SumahajoUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EFA958212D7F82AB00BE0939 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EFA9580D2D7F82AA00BE0939 /* Sumahajo */;
+			targetProxy = EFA958202D7F82AB00BE0939 /* PBXContainerItemProxy */;
+		};
+		EFA9582B2D7F82AB00BE0939 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EFA9580D2D7F82AA00BE0939 /* Sumahajo */;
+			targetProxy = EFA9582A2D7F82AB00BE0939 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		EFA958312D7F82AB00BE0939 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EFA958322D7F82AB00BE0939 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		EFA958342D7F82AB00BE0939 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Sumahajo/Sumahajo.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Sumahajo/Preview Content\"";
+				DEVELOPMENT_TEAM = 3D4H46YR9Z;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.macalester.Sumahajo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		EFA958352D7F82AB00BE0939 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Sumahajo/Sumahajo.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Sumahajo/Preview Content\"";
+				DEVELOPMENT_TEAM = 3D4H46YR9Z;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.macalester.Sumahajo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		EFA958372D7F82AB00BE0939 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3D4H46YR9Z;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.macalester.SumahajoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sumahajo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Sumahajo";
+			};
+			name = Debug;
+		};
+		EFA958382D7F82AB00BE0939 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3D4H46YR9Z;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.macalester.SumahajoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sumahajo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Sumahajo";
+			};
+			name = Release;
+		};
+		EFA9583A2D7F82AB00BE0939 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3D4H46YR9Z;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.macalester.SumahajoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = Sumahajo;
+			};
+			name = Debug;
+		};
+		EFA9583B2D7F82AB00BE0939 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3D4H46YR9Z;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.macalester.SumahajoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = Sumahajo;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EFA958092D7F82AA00BE0939 /* Build configuration list for PBXProject "Sumahajo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EFA958312D7F82AB00BE0939 /* Debug */,
+				EFA958322D7F82AB00BE0939 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EFA958332D7F82AB00BE0939 /* Build configuration list for PBXNativeTarget "Sumahajo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EFA958342D7F82AB00BE0939 /* Debug */,
+				EFA958352D7F82AB00BE0939 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EFA958362D7F82AB00BE0939 /* Build configuration list for PBXNativeTarget "SumahajoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EFA958372D7F82AB00BE0939 /* Debug */,
+				EFA958382D7F82AB00BE0939 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EFA958392D7F82AB00BE0939 /* Build configuration list for PBXNativeTarget "SumahajoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EFA9583A2D7F82AB00BE0939 /* Debug */,
+				EFA9583B2D7F82AB00BE0939 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EFA958062D7F82AA00BE0939 /* Project object */;
+}
