@@ -117,6 +117,4 @@ struct ContentView: View {
         print("Draft saved: \(userText)")
     }
 }
-#Preview {
-    ContentView()
-}
+
