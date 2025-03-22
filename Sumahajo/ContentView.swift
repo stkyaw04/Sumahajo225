@@ -22,7 +22,7 @@ struct ContentView: View {
                 .bold()
                 .foregroundColor(gameOver ? .red : .primary)
             if gameOver {
-                Text("Game Over! The hare won.")
+                Text("Game Over! The hare won :'(")
                     .font(.headline)
                     .foregroundColor(.red)
             }
