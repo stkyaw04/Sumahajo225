@@ -417,9 +417,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Sumahajo/Sumahajo.entitlements;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 				CODE_SIGN_IDENTITY = "Apple Development";
 >>>>>>> main
+=======
+				CODE_SIGN_IDENTITY = "Apple Development";
+>>>>>>> 331172f0dfe91a0891d27722944525e5f6b5716f
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -450,9 +454,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Sumahajo/Sumahajo.entitlements;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 				CODE_SIGN_IDENTITY = "Apple Development";
 >>>>>>> main
+=======
+				CODE_SIGN_IDENTITY = "Apple Development";
+>>>>>>> 331172f0dfe91a0891d27722944525e5f6b5716f
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;

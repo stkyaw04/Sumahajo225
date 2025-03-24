@@ -89,7 +89,11 @@ struct ContentView: View {
                 .bold()
                 .foregroundColor(gameOver ? .red : .primary)
             if gameOver {
+<<<<<<< HEAD
                 Text("Game Over! The hare won.")
+=======
+                Text("Game Over! The hare won :'(")
+>>>>>>> 331172f0dfe91a0891d27722944525e5f6b5716f
                     .font(.headline)
                     .foregroundColor(.red)
             }
@@ -154,6 +158,37 @@ struct ContentView: View {
         }
         .padding()
         .onAppear(perform: startHareTimer)
+<<<<<<< HEAD
+=======
+    }
+    func updateWordCount() {
+        let words = userText.split { $0.isWhitespace || $0.isNewline }
+        wordCount = words.count
+        lastTypedTime = Date()
+        // Normalize progress
+        turtleProgress = CGFloat(wordCount) / CGFloat(wordGoal)
+        if wordCount >= wordGoal {
+            timer?.invalidate()
+        }
+    }
+    func startHareTimer() {
+        timer = Timer
+            .scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
+                let timeElapsed = Date().timeIntervalSince(lastTypedTime)
+                if timeElapsed >= 10 {
+                    hareProgress += 1 // Hare moves by 1 word unit every second of inactivity
+                }
+                if hareProgress >= CGFloat(wordGoal) {
+                    timer?.invalidate()
+                    gameOver = true
+                    userText = "" // clear text when hare wins
+                }
+            }
+    }
+    func saveDraft() {
+        //Saving function to be implemented
+        print("Draft saved: \(userText)")
+>>>>>>> 331172f0dfe91a0891d27722944525e5f6b5716f
     }
     func updateWordCount() {
         let words = userText.split { $0.isWhitespace || $0.isNewline }
