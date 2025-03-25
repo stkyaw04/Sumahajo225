@@ -1,8 +1,7 @@
+// ContentView.swift
+// sumahajo225team
 //
-//  ContentView.swift
-//  Sumahajo 225team
-
-//  Created by Su Thiri Kyaw on 3/10/25.
+// Created by Joseph Saputra on 3/3/25.
 //
 import SwiftUI
 struct ContentView: View {
@@ -110,26 +109,66 @@ struct ContentView: View {
             timer?.invalidate()
         }
     }
-    func startHareTimer() {
-        timer = Timer
-            .scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
-                let timeElapsed = Date().timeIntervalSince(lastTypedTime)
-                if timeElapsed >= 10 {
-                    hareProgress += 1 // Hare moves by 1 word unit every second of inactivity
-                }
-                if hareProgress >= CGFloat(wordGoal) {
-                    timer?.invalidate()
-                    gameOver = true
-                    userText = "" // clear text when hare wins
-                }
-            }
+    .frame(height: 10) // Ensures correct height
+    .cornerRadius(5)
+    ZStack(alignment: .leading) {
+     Rectangle()
+      .frame(height: 10)
+      .foregroundColor(.gray.opacity(0.3))
+     GeometryReader { geometry in
+      Rectangle()
+       .frame(width: min(hareProgress / CGFloat(wordGoal) * geometry.size.width, geometry.size.width), height: 10)
+       .foregroundColor(.red)
+     }
     }
-    func saveDraft() {
-        //Saving function to be implemented
-        print("Draft saved: \(userText)")
+    .frame(height: 10)
+    .cornerRadius(5)
+   TextEditor(text: $userText)
+    .frame(height: 200)
+    .border(Color.gray, width: 1)
+    .padding()
+    .onChange(of: userText) { _ in
+     updateWordCount()
     }
+    .disabled(gameOver)// Turning off the typing func
+   Spacer()
+  }
+  .padding()
+  .onAppear(perform: startHareTimer)
+ }
+  func updateWordCount() {
+   let words = userText.split { $0.isWhitespace || $0.isNewline }
+   wordCount = words.count
+   lastTypedTime = Date()
+   // Normalize progress
+   turtleProgress = CGFloat(wordCount) / CGFloat(wordGoal)
+   if wordCount >= wordGoal {
+    timer?.invalidate()
+   }
+  }
+  func startHareTimer() {
+   timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
+    let timeElapsed = Date().timeIntervalSince(lastTypedTime)
+    if timeElapsed >= 10 {
+     hareProgress += 1 // Hare moves by 1 word unit every second of inactivity
+    }
+    if hareProgress >= CGFloat(wordGoal) {
+     timer?.invalidate()
+     gameOver = true
+     userText = "" // clear text when hare wins
+    }
+   }
+  }
+ func saveDraft() {
+ //Saving function to be implemented
+  print("Draft saved: \(userText)")
+ }
+}
+#Preview {
+ ContentView()
 }
 
 #Preview {
     ContentView()
 }
+
