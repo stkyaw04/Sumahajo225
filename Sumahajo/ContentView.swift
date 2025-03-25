@@ -16,6 +16,16 @@ struct ContentView: View {
     @State private var gameOver: Bool = false
     let wordGoal = 50
     var body: some View {
+        ZStack {
+            Image("wallpaper")
+                .resizable()
+                .scaledToFill()
+                .edgesIgnoringSafeArea(.all)
+                .opacity(0.9) // Increased opacity for visibility
+         
+                
+                .opacity(turtleProgress)
+        }
         VStack(spacing: 20) {
             Text("Typing Race")
                 .font(.title)
@@ -86,8 +96,10 @@ struct ContentView: View {
             Spacer()
         }
         .padding()
+        //.background(Color.white.opacity(0.08))
         .onAppear(perform: startHareTimer)
     }
+    
     func updateWordCount() {
         let words = userText.split { $0.isWhitespace || $0.isNewline }
         wordCount = words.count
