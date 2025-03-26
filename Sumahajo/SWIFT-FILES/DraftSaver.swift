@@ -12,7 +12,7 @@ class DraftSaver {
     static func saveDraft(text: String) {
         let savePanel = NSSavePanel()
         savePanel.title = "Save Your Draft"
-        savePanel.nameFieldStringValue = "TypingRaceDraft.txt"
+        savePanel.nameFieldStringValue = "Sumahajo.txt"
         savePanel.allowedFileTypes = ["txt"]
         
         if savePanel.runModal() == .OK, let url = savePanel.url {

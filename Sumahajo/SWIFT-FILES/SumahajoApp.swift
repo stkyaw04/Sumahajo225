@@ -22,7 +22,7 @@ struct SumahajoApp: App {
 class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ notification: Notification) {
         if let window = NSApplication.shared.windows.first {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { 
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 window.toggleFullScreen(nil)
             }
         }

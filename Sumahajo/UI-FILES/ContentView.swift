@@ -37,9 +37,9 @@ struct ContentView: View {
                     Text("Word Count: \(wordCount)/\(wordGoal)")
                     Spacer()
                     Button("Save") {
-                        DraftSaver.saveDraft(text: userText)  // Call the new helper class
+                        DraftSaver.saveDraft(text: userText)
                     }
-                    .disabled(wordCount < wordGoal || gameOver) // Enable only if word goal is met
+                    .disabled(wordCount < wordGoal || gameOver)
                 }
                 .padding()
                 
@@ -98,30 +98,7 @@ struct ContentView: View {
     }
 }
 
-struct ProgressBar: View {
-    var progress: CGFloat
-    var color: Color
-    
-    var body: some View {
-        ZStack(alignment: .leading) {
-            Rectangle()
-                .frame(height: 10)
-                .foregroundColor(.gray.opacity(0.3))
-                .cornerRadius(5)
-            
-            GeometryReader { geometry in
-                Rectangle()
-                    .frame(
-                        width: min(progress * geometry.size.width, geometry.size.width),
-                        height: 10
-                    )
-                    .foregroundColor(color)
-                    .cornerRadius(5)
-            }
-        }
-        .frame(height: 10)
-    }
-}
+
 
 #Preview {
     ContentView()
