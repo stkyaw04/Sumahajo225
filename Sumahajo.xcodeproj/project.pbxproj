@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B1E5AAF72D943A2D002BD38E /* DraftSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E5AAF62D943A2D002BD38E /* DraftSaver.swift */; };
-		EFA958122D7F82AA00BE0939 /* SumahajoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA958112D7F82AA00BE0939 /* SumahajoApp.swift */; };
-		EFA958142D7F82AA00BE0939 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA958132D7F82AA00BE0939 /* ContentView.swift */; };
+		EF39A7372D94ADEE00420EA0 /* DraftSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF39A7342D94ADEE00420EA0 /* DraftSaver.swift */; };
+		EF39A7382D94ADEE00420EA0 /* SumahajoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF39A7352D94ADEE00420EA0 /* SumahajoApp.swift */; };
+		EF39A7412D94AE2100420EA0 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF39A73F2D94AE2100420EA0 /* ProgressBar.swift */; };
+		EF39A7422D94AE2100420EA0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF39A73E2D94AE2100420EA0 /* ContentView.swift */; };
+		EF39A7442D94AF0500420EA0 /* SpriteTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF39A7432D94AF0500420EA0 /* SpriteTest.swift */; };
 		EFA958162D7F82AB00BE0939 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFA958152D7F82AB00BE0939 /* Assets.xcassets */; };
 		EFA958192D7F82AB00BE0939 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFA958182D7F82AB00BE0939 /* Preview Assets.xcassets */; };
 		EFA958242D7F82AB00BE0939 /* SumahajoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA958232D7F82AB00BE0939 /* SumahajoTests.swift */; };
@@ -35,10 +37,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B1E5AAF62D943A2D002BD38E /* DraftSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraftSaver.swift; sourceTree = "<group>"; };
+		EF39A7342D94ADEE00420EA0 /* DraftSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraftSaver.swift; sourceTree = "<group>"; };
+		EF39A7352D94ADEE00420EA0 /* SumahajoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SumahajoApp.swift; sourceTree = "<group>"; };
+		EF39A73E2D94AE2100420EA0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		EF39A73F2D94AE2100420EA0 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
+		EF39A7432D94AF0500420EA0 /* SpriteTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteTest.swift; sourceTree = "<group>"; };
 		EFA9580E2D7F82AA00BE0939 /* Sumahajo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sumahajo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		EFA958112D7F82AA00BE0939 /* SumahajoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SumahajoApp.swift; sourceTree = "<group>"; };
-		EFA958132D7F82AA00BE0939 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EFA958152D7F82AB00BE0939 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EFA958182D7F82AB00BE0939 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EFA9581A2D7F82AB00BE0939 /* Sumahajo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Sumahajo.entitlements; sourceTree = "<group>"; };
@@ -74,6 +78,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EF39A7362D94ADEE00420EA0 /* SWIFT-FILES */ = {
+			isa = PBXGroup;
+			children = (
+				EF39A7342D94ADEE00420EA0 /* DraftSaver.swift */,
+				EF39A7352D94ADEE00420EA0 /* SumahajoApp.swift */,
+			);
+			path = "SWIFT-FILES";
+			sourceTree = "<group>";
+		};
+		EF39A7402D94AE2100420EA0 /* UI-FILES */ = {
+			isa = PBXGroup;
+			children = (
+				EF39A73E2D94AE2100420EA0 /* ContentView.swift */,
+				EF39A73F2D94AE2100420EA0 /* ProgressBar.swift */,
+				EF39A7432D94AF0500420EA0 /* SpriteTest.swift */,
+			);
+			path = "UI-FILES";
+			sourceTree = "<group>";
+		};
 		EFA958052D7F82AA00BE0939 = {
 			isa = PBXGroup;
 			children = (
@@ -97,9 +120,8 @@
 		EFA958102D7F82AA00BE0939 /* Sumahajo */ = {
 			isa = PBXGroup;
 			children = (
-				EFA958112D7F82AA00BE0939 /* SumahajoApp.swift */,
-				B1E5AAF62D943A2D002BD38E /* DraftSaver.swift */,
-				EFA958132D7F82AA00BE0939 /* ContentView.swift */,
+				EF39A7402D94AE2100420EA0 /* UI-FILES */,
+				EF39A7362D94ADEE00420EA0 /* SWIFT-FILES */,
 				EFA958152D7F82AB00BE0939 /* Assets.xcassets */,
 				EFA9581A2D7F82AB00BE0939 /* Sumahajo.entitlements */,
 				EFA958172D7F82AB00BE0939 /* Preview Content */,
@@ -262,9 +284,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EFA958142D7F82AA00BE0939 /* ContentView.swift in Sources */,
-				B1E5AAF72D943A2D002BD38E /* DraftSaver.swift in Sources */,
-				EFA958122D7F82AA00BE0939 /* SumahajoApp.swift in Sources */,
+				EF39A7372D94ADEE00420EA0 /* DraftSaver.swift in Sources */,
+				EF39A7412D94AE2100420EA0 /* ProgressBar.swift in Sources */,
+				EF39A7422D94AE2100420EA0 /* ContentView.swift in Sources */,
+				EF39A7382D94ADEE00420EA0 /* SumahajoApp.swift in Sources */,
+				EF39A7442D94AF0500420EA0 /* SpriteTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,7 +497,6 @@
 		EFA958372D7F82AB00BE0939 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -492,7 +515,6 @@
 		EFA958382D7F82AB00BE0939 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -511,7 +533,6 @@
 		EFA9583A2D7F82AB00BE0939 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3D4H46YR9Z;
@@ -528,7 +549,6 @@
 		EFA9583B2D7F82AB00BE0939 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3D4H46YR9Z;
