@@ -14,7 +14,7 @@ struct SumahajoApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ViewController()
             SpriteTest()
         }
     }
