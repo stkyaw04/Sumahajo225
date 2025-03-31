@@ -9,13 +9,14 @@ import SwiftUI
 
 struct ViewController: View {
     @State private var showContentView = false
+    @State private var wordGoal: Int = 50
     
     var body: some View {
         
         if showContentView {
-            ContentView()
+            ContentView(wordGoal: wordGoal)
         }else{
-            StartScreenUIView(showContentView : $showContentView)
+            StartScreenUIView(showContentView : $showContentView, wordGoal: $wordGoal)
         }
     }
 }

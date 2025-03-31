@@ -9,7 +9,7 @@ struct ContentView: View {
     @State private var lastTypedTime = Date()
     @State private var timer: Timer?
     @State private var gameOver: Bool = false
-    let wordGoal = 50
+    let wordGoal : Int
     
     var body: some View {
         ZStack {
@@ -101,5 +101,5 @@ struct ContentView: View {
 
 
 #Preview {
-    ContentView()
+    ContentView(wordGoal: 50)
 }
