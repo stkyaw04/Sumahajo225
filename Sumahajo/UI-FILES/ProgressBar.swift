@@ -34,16 +34,16 @@ struct ProgressBar: View {
                     .cornerRadius(5)
                 
                 if isTortoise {
-                                        let frames = ["Tortoise1", "Tortoise2", "Tortoise3"]
-                                        Image(frames[currentFrame - 1])
-                                            .resizable()
-                                            .scaledToFit()
-                                            .frame(width: 70, height: 70)
-                                            .position(x: min(progress * geometry.size.width, geometry.size.width), y: -10)
-                                            .onChange(of: wordCount) { _ in
-                                                animateTortoise()
-                                            }
-                                    }
+                   let frames = ["Tortoise1", "Tortoise2", "Tortoise3"]
+                   Image(frames[currentFrame - 1])
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 70, height: 70)
+                        .position(x: min(progress * geometry.size.width, geometry.size.width), y: -10)
+                        .onChange(of: wordCount) { _ in
+                    animateTortoise()
+                        }
+                }
             }
         }
         .frame(height: 10)
