@@ -43,8 +43,8 @@ struct ContentView: View {
                 }
                 .padding()
                 
-                ProgressBar(progress: turtleProgress, color: .green)
-                ProgressBar(progress: hareProgress / CGFloat(wordGoal), color: .red)
+                ProgressBar(progress: turtleProgress, color: .green, isTortoise: true, wordCount: wordCount)
+                ProgressBar(progress: hareProgress / CGFloat(wordGoal), color: .red, isTortoise: false, wordCount: wordCount)
                 
                 TextEditor(text: $userText)
                     .frame(height: 500)
