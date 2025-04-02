@@ -101,5 +101,5 @@ struct ContentView: View {
 
 
 #Preview {
-    ContentView(wordGoal: 50)
+    ContentView(wordGoal: 0)
 }

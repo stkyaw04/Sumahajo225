@@ -11,6 +11,7 @@ struct StartScreenUIView: View {
     @Binding var showContentView: Bool // Must be a binding
     @Binding var wordGoal: Int
     @State private var inputText: String = ""
+    @State private var errorMessage : String? = nil
 
     var body: some View {
         VStack{
@@ -19,19 +20,33 @@ struct StartScreenUIView: View {
                 .padding()
             
             TextField("Enter a word goal", text: $inputText)
-                //.onSubmit(startGame) - this is if i create a func that starts the game based on an imput
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .onSubmit(startGame)
                 .frame(width:500)
                 .padding()
-
-                Button("Start Writing") {
-                wordGoal = Int(inputText) ?? 50
-                showContentView = true
-                    }
+                
+            if let errorMessage = errorMessage{
+                Text(errorMessage)
+                    .foregroundColor(.red)
+                    .font(.subheadline)
+            }
+            Button("Start Writing") {
+                startGame()
+                }
                     .font(.title)
                     .padding()
+                    }
+                    
                 }
+    func startGame() {
+            if let goal = Int(inputText), goal > 0 {
+                wordGoal = goal
+                showContentView = true
+            } else {
+                errorMessage = "Please input a valid word goal"
+            }
         }
-}
+    }
 #Preview {
     StartScreenUIView(showContentView: .constant(false), wordGoal: .constant(50))
 }

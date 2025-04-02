@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ViewController: View {
     @State private var showContentView = false
-    @State private var wordGoal: Int = 50
+    @State private var wordGoal: Int = 0
     
     var body: some View {
         
