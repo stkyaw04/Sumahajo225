@@ -9,6 +9,7 @@ struct ContentView: View {
     @State private var lastTypedTime = Date()
     @State private var timer: Timer?
     @State private var gameOver: Bool = false
+    @State private var fontSize: CGFloat = 16  // to Add font size state
     let wordGoal : Int
     
     var body: some View {
@@ -46,10 +47,43 @@ struct ContentView: View {
                 ProgressBar(progress: turtleProgress, color: .green, isTortoise: true, wordCount: wordCount)
                 ProgressBar(progress: hareProgress / CGFloat(wordGoal), color: .red, isTortoise: false, wordCount: wordCount)
                 
+                // This HStack allows the user to adjust the font size of the TextEditor dynamically.
+                // Font size adjustment controls:
+                // - "-" and "+" buttons decrease/increase fontSize within range 12–28.
+                // - Current font size displayed between buttons.
+                HStack {
+                    Text("Font Size:")
+                    
+                    Button(action: { fontSize = max(12, fontSize - 2) }) {
+                        Image(systemName: "minus.circle")
+                    }
+                    
+                    Text("\(Int(fontSize))")
+                        .frame(width: 30)
+                    
+                    Button(action: { fontSize = min(28, fontSize + 2) }) {
+                        Image(systemName: "plus.circle")
+                    }
+                    
+                    Spacer()
+                }
+                .padding(.horizontal)
+                
+                // Text editor with adjustable font size and styling:
+                // - Applies dynamic font size.
+                // - Adds padding, border, rounded corners, and overlay for better UI.
+                
                 TextEditor(text: $userText)
+                    .font(.system(size: fontSize)) //to applied custom font size
                     .frame(height: 500)
-                    .border(Color.gray, width: 1)
-                    .padding()
+                    .padding(10)          //added internal padding
+                    .border(Color(.textBackgroundColor))
+                    .cornerRadius(8)    //added a border
+                    .overlay(  //  Added a border
+                           RoundedRectangle(cornerRadius: 10)
+                            .stroke(Color.gray.opacity(0.1), lineWidth: 3) // we can change to color we want here!
+                                        )
+                                        .padding()
                     .onChange(of: userText) { _ in
                         DispatchQueue.main.async {
                             updateWordCount()
