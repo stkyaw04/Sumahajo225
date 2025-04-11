@@ -12,33 +12,42 @@ struct StartScreenUIView: View {
     @Binding var wordGoal: Int
     @State private var inputText: String = ""
     @State private var errorMessage : String? = nil
-
+    
     var body: some View {
-        VStack{
-        Text("Welcome to Tortoise vs Hare")
-                .font(.largeTitle)
-                .padding()
-            
-            TextField("Enter a word goal", text: $inputText)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .onSubmit(startGame)
-                .frame(width:500)
-                .padding()
-                
-            if let errorMessage = errorMessage{
-                Text(errorMessage)
-                    .foregroundColor(.red)
-                    .font(.subheadline)
-            }
-            Button("Start Writing") {
-                startGame()
-                }
-                    .font(.title)
+        ZStack{
+            Image("StartPage")
+                .resizable()
+                .scaledToFill()
+                .edgesIgnoringSafeArea(.all)
+                .opacity(0.9)
+            SpriteTest()
+                .offset(x:100, y:625)
+            VStack{
+                Text("Welcome to Tortoise vs Hare")
+                    .font(.largeTitle)
                     .padding()
-                    }
-                    
+                
+                TextField("Enter a word goal", text: $inputText)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .onSubmit(startGame)
+                    .frame(width:500)
+                    .padding()
+                
+                if let errorMessage = errorMessage{
+                    Text(errorMessage)
+                        .foregroundColor(.red)
+                        .font(.subheadline)
                 }
-    func startGame() {
+                Button("Start Writing") {
+                    startGame()
+                }
+                .font(.title)
+                .padding()
+            }
+            
+        }
+    }
+        func startGame() {
             if let goal = Int(inputText), goal > 0 {
                 wordGoal = goal
                 showContentView = true
@@ -48,5 +57,5 @@ struct StartScreenUIView: View {
         }
     }
 #Preview {
-    StartScreenUIView(showContentView: .constant(false), wordGoal: .constant(50))
+    StartScreenUIView(showContentView: .constant(false), wordGoal: .constant(0))
 }

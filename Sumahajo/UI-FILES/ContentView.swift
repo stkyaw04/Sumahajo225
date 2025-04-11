@@ -82,7 +82,7 @@ struct ContentView: View {
                     .overlay(  //  Added a border
                            RoundedRectangle(cornerRadius: 10)
                             .stroke(Color.gray.opacity(0.1), lineWidth: 3) // we can change to color we want here!
-                                        )
+                                            )
                                         .padding()
                     .onChange(of: userText) { _ in
                         DispatchQueue.main.async {
