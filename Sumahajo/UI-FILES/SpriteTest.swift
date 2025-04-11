@@ -17,7 +17,7 @@ struct SpriteTest: View {
                 .onAppear {
                     // Move image and rotate through frames
                     withAnimation(.linear(duration: 20).repeatForever(autoreverses: false)) {
-                        positionX = 1000
+                        positionX = 1400
                     }
                     
                     // Change frames every 7 seconds (you can adjust the time)

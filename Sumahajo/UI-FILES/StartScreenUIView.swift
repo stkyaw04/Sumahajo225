@@ -21,7 +21,7 @@ struct StartScreenUIView: View {
                 .edgesIgnoringSafeArea(.all)
                 .opacity(0.9)
             SpriteTest()
-                .offset(x:100, y:625)
+                .offset(x:0, y:625)
             VStack{
                 Text("Welcome to Tortoise vs Hare")
                     .font(.largeTitle)
