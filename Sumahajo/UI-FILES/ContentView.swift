@@ -10,6 +10,7 @@ struct ContentView: View {
     @State private var timer: Timer?
     @State private var gameOver: Bool = false
     @State private var fontSize: CGFloat = 16  // to Add font size state
+    @State private var showGoalReachedAlert = false   // Tracks whether the user has reached their word goal and
     let wordGoal : Int
     
     var body: some View {
@@ -95,6 +96,19 @@ struct ContentView: View {
             }
             .padding()
             .onAppear(perform: startHareTimer)
+            .alert("Congratulations!", isPresented: $showGoalReachedAlert) {
+                Button("Keep Writing", role: .cancel) {
+                  
+                }
+                // Second option saves the draft and exits the session.
+                Button("Save and Exit") {
+                    DraftSaver.saveDraft(text: userText)
+                    gameOver = true
+                }
+            } message: {
+                Text("You have reached your word goal of \(wordGoal) words! What would you like to do?") //message with dynamic word goal
+            }
+
         }
     }
     
@@ -110,6 +124,7 @@ struct ContentView: View {
         if wordCount >= wordGoal {
             DispatchQueue.main.async {
                 timer?.invalidate()
+                showGoalReachedAlert = true   // Trigger the alert congratulating the user.
             }
         }
     }
