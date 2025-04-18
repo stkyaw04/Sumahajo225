@@ -45,8 +45,11 @@ struct ContentView: View {
                 }
                 .padding()
                 
-                ProgressBar(progress: turtleProgress, color: .green, isTortoise: true, wordCount: wordCount)
-                ProgressBar(progress: hareProgress / CGFloat(wordGoal), color: .red, isTortoise: false, wordCount: wordCount)
+//                ProgressBar(progress: turtleProgress, color: .green, isTortoise: true)
+//                ProgressBar(progress: hareProgress / CGFloat(wordGoal), color: .red, isTortoise: false)
+                
+                ProgressBar(wordGoal: wordGoal, wordCount: $wordCount, isTortoise: true)
+                ProgressBar(wordGoal: wordGoal, wordCount: .constant(Int(hareProgress)), isTortoise: false)
                 
                 // This HStack allows the user to adjust the font size of the TextEditor dynamically.
                 // Font size adjustment controls:
@@ -134,7 +137,7 @@ struct ContentView: View {
             let timeElapsed = Date().timeIntervalSince(lastTypedTime)
             
             DispatchQueue.main.async {
-                if timeElapsed >= 10 {
+                if timeElapsed >= 2 {
                     hareProgress += 1
                 }
                 

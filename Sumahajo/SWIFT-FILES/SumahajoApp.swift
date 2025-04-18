@@ -16,6 +16,7 @@ struct SumahajoApp: App {
         WindowGroup {
             ViewController()
             SpriteTest()
+
         }
     }
 }
