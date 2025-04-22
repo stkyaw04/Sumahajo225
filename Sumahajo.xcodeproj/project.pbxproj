@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C28977512DB6DBBF0000EE77 /* HareDifficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28977502DB6DBB20000EE77 /* HareDifficulty.swift */; };
 		C2EBC3482D9752E700D17410 /* AppRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EBC3472D9752E700D17410 /* AppRootView.swift */; };
 		C2EBC34A2D97538800D17410 /* StartScreenUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EBC3492D97538800D17410 /* StartScreenUIView.swift */; };
 		EF39A7372D94ADEE00420EA0 /* DraftSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF39A7342D94ADEE00420EA0 /* DraftSaver.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C28977502DB6DBB20000EE77 /* HareDifficulty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HareDifficulty.swift; sourceTree = "<group>"; };
 		C2EBC3472D9752E700D17410 /* AppRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootView.swift; sourceTree = "<group>"; };
 		C2EBC3492D97538800D17410 /* StartScreenUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreenUIView.swift; sourceTree = "<group>"; };
 		EF39A7342D94ADEE00420EA0 /* DraftSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraftSaver.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 		EF39A7402D94AE2100420EA0 /* UI-FILES */ = {
 			isa = PBXGroup;
 			children = (
+				C28977502DB6DBB20000EE77 /* HareDifficulty.swift */,
 				EF39A73E2D94AE2100420EA0 /* ContentView.swift */,
 				EF39A73F2D94AE2100420EA0 /* ProgressBar.swift */,
 				EF39A7432D94AF0500420EA0 /* SpriteTest.swift */,
@@ -295,6 +298,7 @@
 			files = (
 				C2EBC34A2D97538800D17410 /* StartScreenUIView.swift in Sources */,
 				EF39A7372D94ADEE00420EA0 /* DraftSaver.swift in Sources */,
+				C28977512DB6DBBF0000EE77 /* HareDifficulty.swift in Sources */,
 				EF39A7412D94AE2100420EA0 /* ProgressBar.swift in Sources */,
 				EF39A7422D94AE2100420EA0 /* ContentView.swift in Sources */,
 				EF39A7382D94ADEE00420EA0 /* SumahajoApp.swift in Sources */,

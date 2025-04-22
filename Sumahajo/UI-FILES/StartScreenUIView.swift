@@ -12,6 +12,9 @@ struct StartScreenUIView: View {
     @Binding var wordGoal: Int
     @State private var inputText: String = ""
     @State private var errorMessage : String? = nil
+    @Binding var timedMode: Bool
+    @Binding var difficulty: String
+    let difficulties = ["Easy","Medium","Hard"]
     
     var body: some View {
         ZStack{
@@ -25,6 +28,19 @@ struct StartScreenUIView: View {
             VStack{
                 Text("Welcome to Tortoise vs Hare")
                     .font(.largeTitle)
+                    .padding()
+                
+                HStack{
+                    Picker("Difficulty", selection: $difficulty){
+                        ForEach(difficulties, id: \.self){
+                            level in Text(level)
+                        }
+                    }
+                    .pickerStyle(SegmentedPickerStyle())
+                    .frame(width: 300)
+                }
+                Toggle("Timed Mode", isOn: $timedMode)
+                    .frame(width: 300)
                     .padding()
                 
                 TextField("Enter a word goal", text: $inputText)
@@ -51,11 +67,12 @@ struct StartScreenUIView: View {
             if let goal = Int(inputText), goal > 0 {
                 wordGoal = goal
                 showContentView = true
+                print("Game Started with goal: \(goal), difficulty: \(difficulty), timed: \(timedMode)")
             } else {
                 errorMessage = "Please input a valid word goal"
             }
         }
     }
-#Preview {
-    StartScreenUIView(showContentView: .constant(false), wordGoal: .constant(0))
+#Preview {StartScreenUIView(showContentView: .constant(false),wordGoal: .constant(0),timedMode: .constant(false),difficulty: .constant("Easy")
+)
 }

@@ -6,11 +6,17 @@ struct ContentView: View {
     @State private var wordCount: Int = 0
     @State private var turtleProgress: CGFloat = 0.0
     @State private var hareProgress: CGFloat = 0.0
+    @State private var hareWordCount: Int = 0
     @State private var lastTypedTime = Date()
     @State private var timer: Timer?
     @State private var gameOver: Bool = false
     @State private var fontSize: CGFloat = 16  // to Add font size state
-    let wordGoal : Int
+    @State private var timeRemaining: Int = 60 // default, can adjust based on difficulty
+    @StateObject private var hareLogic = HareLogicManager()
+    
+    let wordGoal: Int
+    let timedMode: Bool
+    let difficulty: String
     
     var body: some View {
         ZStack {
@@ -27,28 +33,38 @@ struct ContentView: View {
                     .font(.title)
                     .bold()
                     .foregroundColor(gameOver ? .red : .primary)
-                
-                if gameOver {
-                    Text("Game Over! The hare won.")
+                if timedMode{
+                    Text("Time Remaining: \(hareLogic.timeRemaining)s")
+                        .font(.headline)
+                        .foregroundColor(.blue)
+                }
+                if hareLogic.gameOver {
+                    Text(timedMode ? "Time’s up! The hare wins." : "Game Over! The hare won.")
                         .font(.headline)
                         .foregroundColor(.red)
                 }
                 
                 HStack {
-                    Text("Word Count: \(wordCount)/\(wordGoal)")
+                    if !timedMode {
+                        Text("Word Count: \(wordCount)/\(wordGoal)")
+                    } else {
+                        Text("Words Written: \(wordCount)")
+                    }
+                    
                     Spacer()
+                    
                     Button("Save") {
                         DraftSaver.saveDraft(text: userText)
                     }
-                    .disabled(wordCount < wordGoal || gameOver)
+                    .disabled((!timedMode && wordCount < wordGoal) || hareLogic.gameOver)
                 }
                 .padding()
                 
-//                ProgressBar(progress: turtleProgress, color: .green, isTortoise: true)
-//                ProgressBar(progress: hareProgress / CGFloat(wordGoal), color: .red, isTortoise: false)
+                //                ProgressBar(progress: turtleProgress, color: .green, isTortoise: true)
+                //                ProgressBar(progress: hareProgress / CGFloat(wordGoal), color: .red, isTortoise: false)
                 
                 ProgressBar(wordGoal: wordGoal, wordCount: $wordCount, isTortoise: true)
-                ProgressBar(wordGoal: wordGoal, wordCount: .constant(Int(hareProgress)), isTortoise: false)
+                ProgressBar(wordGoal: wordGoal, wordCount: .constant(hareWordCount), isTortoise: false)
                 
                 // This HStack allows the user to adjust the font size of the TextEditor dynamically.
                 // Font size adjustment controls:
@@ -83,22 +99,26 @@ struct ContentView: View {
                     .border(Color(.textBackgroundColor))
                     .cornerRadius(8)    //added a border
                     .overlay(  //  Added a border
-                           RoundedRectangle(cornerRadius: 10)
+                        RoundedRectangle(cornerRadius: 10)
                             .stroke(Color.gray.opacity(0.1), lineWidth: 3) // we can change to color we want here!
-                                            )
-                                        .padding()
+                    )
+                    .padding()
                     .onChange(of: userText) { _ in
                         DispatchQueue.main.async {
                             updateWordCount()
                         }
                     }
-                    .disabled(gameOver)
+                    .disabled(hareLogic.gameOver)
                 
-                Spacer()
             }
             .padding()
-            .onAppear(perform: startHareTimer)
-
+            .onAppear {
+                hareLogic.configure(timedMode: timedMode, difficulty: difficulty, wordGoal: wordGoal)
+                hareLogic.start()
+            }
+            .onReceive(hareLogic.$hareProgress) { value in
+                hareWordCount = Int(min(value, CGFloat(wordGoal)))
+            }
         }
     }
     
@@ -117,27 +137,8 @@ struct ContentView: View {
             }
         }
     }
-    
-    func startHareTimer() {
-        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
-            let timeElapsed = Date().timeIntervalSince(lastTypedTime)
-            
-            DispatchQueue.main.async {
-                if timeElapsed >= 2 {
-                    hareProgress += 1
-                }
-                
-                if hareProgress >= CGFloat(wordGoal) {
-                    timer?.invalidate()
-                    gameOver = true
-                }
-            }
-        }
-    }
 }
 
-
-
 #Preview {
-    ContentView(wordGoal: 0)
+    //ContentView(wordGoal: 0)
 }
