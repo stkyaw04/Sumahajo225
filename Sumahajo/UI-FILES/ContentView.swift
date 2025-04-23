@@ -44,7 +44,7 @@ struct ContentView: View {
     //  Components
 
     private var backgroundView: some View {
-        Image("wallpaper")
+        Image("Background")
             .resizable()
             .scaledToFill()
             .edgesIgnoringSafeArea(.all)
@@ -59,6 +59,7 @@ struct ContentView: View {
 //            progressBars
             fontSizeControls
             textEditorView
+            Spacer()
             progressBars
         }
         .padding()
@@ -100,7 +101,7 @@ struct ContentView: View {
     }
 
     private var progressBars: some View {
-        VStack {
+        ZStack {
             ProgressBar(wordGoal: wordGoal, wordCount: $wordCount, isTortoise: true)
             ProgressBar(wordGoal: wordGoal, wordCount: .constant(hareWordCount), isTortoise: false)
         }
