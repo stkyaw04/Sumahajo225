@@ -10,7 +10,6 @@
 		C28977512DB6DBBF0000EE77 /* HareDifficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28977502DB6DBB20000EE77 /* HareDifficulty.swift */; };
 		C2EBC3482D9752E700D17410 /* AppRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EBC3472D9752E700D17410 /* AppRootView.swift */; };
 		C2EBC34A2D97538800D17410 /* StartScreenUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EBC3492D97538800D17410 /* StartScreenUIView.swift */; };
-		EF39A7372D94ADEE00420EA0 /* DraftSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF39A7342D94ADEE00420EA0 /* DraftSaver.swift */; };
 		EF39A7382D94ADEE00420EA0 /* SumahajoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF39A7352D94ADEE00420EA0 /* SumahajoApp.swift */; };
 		EF39A7412D94AE2100420EA0 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF39A73F2D94AE2100420EA0 /* ProgressBar.swift */; };
 		EF39A7422D94AE2100420EA0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF39A73E2D94AE2100420EA0 /* ContentView.swift */; };
@@ -21,6 +20,7 @@
 		EFA958242D7F82AB00BE0939 /* SumahajoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA958232D7F82AB00BE0939 /* SumahajoTests.swift */; };
 		EFA9582E2D7F82AB00BE0939 /* SumahajoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA9582D2D7F82AB00BE0939 /* SumahajoUITests.swift */; };
 		EFA958302D7F82AB00BE0939 /* SumahajoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA9582F2D7F82AB00BE0939 /* SumahajoUITestsLaunchTests.swift */; };
+		EFC1D7292DB88902008FAB4D /* NoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC1D7282DB88902008FAB4D /* NoteViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +44,6 @@
 		C28977502DB6DBB20000EE77 /* HareDifficulty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HareDifficulty.swift; sourceTree = "<group>"; };
 		C2EBC3472D9752E700D17410 /* AppRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootView.swift; sourceTree = "<group>"; };
 		C2EBC3492D97538800D17410 /* StartScreenUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreenUIView.swift; sourceTree = "<group>"; };
-		EF39A7342D94ADEE00420EA0 /* DraftSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraftSaver.swift; sourceTree = "<group>"; };
 		EF39A7352D94ADEE00420EA0 /* SumahajoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SumahajoApp.swift; sourceTree = "<group>"; };
 		EF39A73E2D94AE2100420EA0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EF39A73F2D94AE2100420EA0 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
@@ -59,6 +58,7 @@
 		EFA958292D7F82AB00BE0939 /* SumahajoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SumahajoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFA9582D2D7F82AB00BE0939 /* SumahajoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SumahajoUITests.swift; sourceTree = "<group>"; };
 		EFA9582F2D7F82AB00BE0939 /* SumahajoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SumahajoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		EFC1D7282DB88902008FAB4D /* NoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +89,7 @@
 		EF39A7362D94ADEE00420EA0 /* SWIFT-FILES */ = {
 			isa = PBXGroup;
 			children = (
-				EF39A7342D94ADEE00420EA0 /* DraftSaver.swift */,
+				EFC1D7282DB88902008FAB4D /* NoteViewModel.swift */,
 				EF39A7352D94ADEE00420EA0 /* SumahajoApp.swift */,
 			);
 			path = "SWIFT-FILES";
@@ -296,8 +296,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFC1D7292DB88902008FAB4D /* NoteViewModel.swift in Sources */,
 				C2EBC34A2D97538800D17410 /* StartScreenUIView.swift in Sources */,
-				EF39A7372D94ADEE00420EA0 /* DraftSaver.swift in Sources */,
 				C28977512DB6DBBF0000EE77 /* HareDifficulty.swift in Sources */,
 				EF39A7412D94AE2100420EA0 /* ProgressBar.swift in Sources */,
 				EF39A7422D94AE2100420EA0 /* ContentView.swift in Sources */,

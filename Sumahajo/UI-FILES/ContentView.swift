@@ -56,9 +56,10 @@ struct ContentView: View {
             Spacer(minLength: 20)
             titleSection
             wordCounterSection
-            progressBars
+//            progressBars
             fontSizeControls
             textEditorView
+            progressBars
         }
         .padding()
     }

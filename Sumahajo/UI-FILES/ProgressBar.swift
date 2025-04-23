@@ -22,23 +22,23 @@ struct ProgressBar: View {
     @State private var isAnimating = false
 
     let tortoiseFrames = ["Tortoise1", "Tortoise2", "Tortoise3"]
-    let hareFrames = ["Hare1", "Hare2", "Hare3"]
+    let hareFrames = ["Hare1", "Hare2", "Hare3", "Hare4"]
 
     var body: some View {
         GeometryReader { geometry in
             ZStack(alignment: .leading) {
-                Rectangle()
-                    .frame(height: 10)
-                    .foregroundColor(.gray.opacity(0.3))
-                    .cornerRadius(5)
+//                Rectangle()
+//                    .frame(height: 10)
+//                    .foregroundColor(.gray.opacity(0.3))
+//                    .cornerRadius(5)
 
-                Rectangle()
-                    .frame(
-                        width: min(CGFloat(wordCount) / CGFloat(wordGoal) * geometry.size.width, geometry.size.width),
-                        height: 10
-                    )
-                    .foregroundColor(isTortoise ? .green : .red)
-                    .cornerRadius(5)
+//                Rectangle()
+//                    .frame(
+//                        width: min(CGFloat(wordCount) / CGFloat(wordGoal) * geometry.size.width, geometry.size.width),
+//                        height: 10
+//                    )
+//                    .foregroundColor(isTortoise ? .green : .red)
+//                    .cornerRadius(5)
 
                 Image((isTortoise ? tortoiseFrames : hareFrames)[currentFrame - 1])
                     .resizable()
@@ -57,7 +57,7 @@ struct ProgressBar: View {
                 startWalking()
             }
         }
-        .padding(.top, 40)
+//        .padding(.top, 40)
     }
 
     func startWalking() {
