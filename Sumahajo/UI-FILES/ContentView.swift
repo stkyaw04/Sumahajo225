@@ -28,6 +28,7 @@ struct ContentView: View {
             ZStack {
                 backgroundView
                 mainContent
+                    .zIndex(1)
             }
             .sheet(isPresented: $showingNameInput, content: { draftNamingSheet })
             .navigationDestination(isPresented: $showLibrary) { StartScreenViewWrapper }
@@ -52,14 +53,14 @@ struct ContentView: View {
     }
 
     private var mainContent: some View {
-        VStack(spacing: 20) {
-            Spacer(minLength: 20)
+        VStack {
+            Spacer(minLength: 150)
             titleSection
             wordCounterSection
 //            progressBars
             fontSizeControls
             textEditorView
-            Spacer()
+           Spacer(minLength: 50)
             progressBars
         }
         .padding()
