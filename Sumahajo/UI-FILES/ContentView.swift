@@ -60,7 +60,7 @@ struct ContentView: View {
 //            progressBars
             fontSizeControls
             textEditorView
-           Spacer(minLength: 50)
+           Spacer(minLength: 360)
             progressBars
         }
         .padding()
@@ -131,7 +131,7 @@ struct ContentView: View {
     private var textEditorView: some View {
         TextEditor(text: $userText)
             .font(.system(size: fontSize))
-            .frame(height: 500)
+            .frame(height: 200)
             .padding(10)
             .background(Color.white.opacity(0.05))
             .cornerRadius(10)
