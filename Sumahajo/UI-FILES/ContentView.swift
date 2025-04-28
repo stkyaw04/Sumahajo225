@@ -1,5 +1,6 @@
 import SwiftUI
 import AppKit
+import ConfettiSwiftUI
 
 struct ContentView: View {
     @State private var userText: String = ""
@@ -14,6 +15,10 @@ struct ContentView: View {
     @State private var showingNameInput = false
     @State private var draftName: String = ""
     @State private var showLibrary = false
+    @State private var confettiTrigger = 0
+    @State private var hasCelebrated = false
+    
+    
 
     @Binding var showContentView: Bool
     @Binding var wordGoal: Int
@@ -30,6 +35,13 @@ struct ContentView: View {
                 mainContent
                     .zIndex(1)
             }
+            .confettiCannon(
+                trigger: $confettiTrigger,
+                num: 200,
+                confettiSize: 20,
+                radius: 500,
+                repetitions: 1
+            )
             .sheet(isPresented: $showingNameInput, content: { draftNamingSheet })
             .navigationDestination(isPresented: $showLibrary) { StartScreenViewWrapper }
             .onAppear {
@@ -60,7 +72,7 @@ struct ContentView: View {
 //            progressBars
             fontSizeControls
             textEditorView
-           Spacer(minLength: 360)
+           Spacer(minLength: 50)
             progressBars
         }
         .padding()
@@ -89,9 +101,9 @@ struct ContentView: View {
 
     private var wordCounterSection: some View {
         HStack {
-            Text(timedMode ? "Words Written: \(wordCount)" : "Word Count: \(wordCount)/\(wordGoal)")
+            Text(timedMode ? "Words Written: \(wordCount)" : "Word Count: \(wordCount)/\(wordGoal)").bold()
             Spacer()
-            Button("Save YOur Draft") {
+            Button("Save Your Draft") {
                 showingNameInput = true
             }
             .font(.title)
@@ -131,7 +143,7 @@ struct ContentView: View {
     private var textEditorView: some View {
         TextEditor(text: $userText)
             .font(.system(size: fontSize))
-            .frame(height: 200)
+            .frame(height: 500)
             .padding(10)
             .background(Color.white.opacity(0.05))
             .cornerRadius(10)
@@ -194,8 +206,11 @@ struct ContentView: View {
         lastTypedTime = Date()
         turtleProgress = CGFloat(wordCount) / CGFloat(wordGoal)
 
-        if wordCount >= wordGoal {
-            DispatchQueue.main.async { timer?.invalidate() }
+        if wordCount >= wordGoal && !hasCelebrated {
+            hasCelebrated = true
+            timer?.invalidate()
+            confettiTrigger += 1
         }
     }
+
 }
