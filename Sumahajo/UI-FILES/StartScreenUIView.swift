@@ -55,40 +55,42 @@ struct StartScreenUIView: View {
                     .offset(x:0, y:625)
                 
                 HStack{
-                    VStack(alignment: .leading, spacing: 10) {
-                        Spacer().frame(height: 100)
-                        
-                        TextField("Search", text: $searchText)
-                            .textFieldStyle(.roundedBorder)
-                            .padding(.horizontal)
-                            .padding(.top, 40)
-                        
-                        List(filteredFiles, id: \.self) { file in
-                            HStack {
-                                Button(file) {
-                                    editingFileName = file
-                                    navigateToEdit = true
+                    if !viewModel.files.isEmpty {
+                        VStack(alignment: .leading, spacing: 10) {
+                            Spacer().frame(height: 100)
+                            
+                            TextField("Search", text: $searchText)
+                                .textFieldStyle(.roundedBorder)
+                                .padding(.horizontal)
+                                .padding(.top, 40)
+                            
+                            List(filteredFiles, id: \.self) { file in
+                                HStack {
+                                    Button(file) {
+                                        editingFileName = file
+                                        navigateToEdit = true
+                                    }
+                                    .foregroundColor(.white)
+                                    
+                                    Spacer()
+                                    
+                                    Button("Delete") {
+                                        viewModel.deleteFile(named: file)
+                                    }
+                                    .foregroundColor(.red)
                                 }
-                                .foregroundColor(.white)
-                                
-                                Spacer()
-                                
-                                Button("Delete") {
-                                    viewModel.deleteFile(named: file)
-                                }
-                                .foregroundColor(.red)
+                                .listRowBackground(Color.clear)
                             }
-                            .listRowBackground(Color.clear)
+                            .scrollContentBackground(.hidden)
+                            .background(Color.clear)
                         }
-                        .scrollContentBackground(.hidden)
-                        .background(Color.clear)
-                    }
-                    .background(Color.black.opacity(0.3))// can also be ".ultraThinMaterial"
-                    .cornerRadius(12)
-                    .padding(.top, 10)
-                    .frame(width: splitPosition)
-                    .onAppear {
-                        viewModel.loadFiles()
+                        .background(Color.black.opacity(0.3))// can also be ".ultraThinMaterial"
+                        .cornerRadius(12)
+                        .padding(.top, 10)
+                        .frame(width: splitPosition)
+                        .onAppear {
+                            viewModel.loadFiles()
+                        }
                     }
                     
                 
