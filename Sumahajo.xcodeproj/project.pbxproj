@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C248CEB92DC0302F003EF0EE /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = C248CEB82DC0302F003EF0EE /* ConfettiSwiftUI */; };
 		C28977512DB6DBBF0000EE77 /* HareDifficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28977502DB6DBB20000EE77 /* HareDifficulty.swift */; };
 		C2EBC3482D9752E700D17410 /* AppRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EBC3472D9752E700D17410 /* AppRootView.swift */; };
 		C2EBC34A2D97538800D17410 /* StartScreenUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EBC3492D97538800D17410 /* StartScreenUIView.swift */; };
@@ -66,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C248CEB92DC0302F003EF0EE /* ConfettiSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,6 +256,9 @@
 				Base,
 			);
 			mainGroup = EFA958052D7F82AA00BE0939;
+			packageReferences = (
+				C248CEB72DC02F83003EF0EE /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */,
+			);
 			productRefGroup = EFA9580F2D7F82AA00BE0939 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -618,6 +623,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C248CEB72DC02F83003EF0EE /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/simibac/ConfettiSwiftUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C248CEB82DC0302F003EF0EE /* ConfettiSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C248CEB72DC02F83003EF0EE /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */;
+			productName = ConfettiSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EFA958062D7F82AA00BE0939 /* Project object */;
 }
