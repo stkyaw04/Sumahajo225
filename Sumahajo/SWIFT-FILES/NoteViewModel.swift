@@ -6,6 +6,7 @@
 //
 import SwiftUI
 import Foundation
+
 class NoteViewModel: ObservableObject {
     @Published var files: [String] = []
     @Published var currentFileName: String = ""
