@@ -14,9 +14,9 @@
 		C2EBC3482D9752E700D17410 /* AppRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EBC3472D9752E700D17410 /* AppRootView.swift */; };
 		C2EBC34A2D97538800D17410 /* StartScreenUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EBC3492D97538800D17410 /* StartScreenUIView.swift */; };
 		EF39A7382D94ADEE00420EA0 /* SumahajoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF39A7352D94ADEE00420EA0 /* SumahajoApp.swift */; };
-		EF39A7412D94AE2100420EA0 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF39A73F2D94AE2100420EA0 /* ProgressBar.swift */; };
+		EF39A7412D94AE2100420EA0 /* RaceAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF39A73F2D94AE2100420EA0 /* RaceAnimationView.swift */; };
 		EF39A7422D94AE2100420EA0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF39A73E2D94AE2100420EA0 /* ContentView.swift */; };
-		EF39A7442D94AF0500420EA0 /* SpriteTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF39A7432D94AF0500420EA0 /* SpriteTest.swift */; };
+		EF39A7442D94AF0500420EA0 /* TortoiseAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF39A7432D94AF0500420EA0 /* TortoiseAnimationView.swift */; };
 		EF76046D2DA48A6F00D0C403 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF76046C2DA48A6F00D0C403 /* Test.swift */; };
 		EFA958162D7F82AB00BE0939 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFA958152D7F82AB00BE0939 /* Assets.xcassets */; };
 		EFA958192D7F82AB00BE0939 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFA958182D7F82AB00BE0939 /* Preview Assets.xcassets */; };
@@ -52,8 +52,8 @@
 		C2EBC3492D97538800D17410 /* StartScreenUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreenUIView.swift; sourceTree = "<group>"; };
 		EF39A7352D94ADEE00420EA0 /* SumahajoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SumahajoApp.swift; sourceTree = "<group>"; };
 		EF39A73E2D94AE2100420EA0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		EF39A73F2D94AE2100420EA0 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
-		EF39A7432D94AF0500420EA0 /* SpriteTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteTest.swift; sourceTree = "<group>"; };
+		EF39A73F2D94AE2100420EA0 /* RaceAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceAnimationView.swift; sourceTree = "<group>"; };
+		EF39A7432D94AF0500420EA0 /* TortoiseAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TortoiseAnimationView.swift; sourceTree = "<group>"; };
 		EF76046C2DA48A6F00D0C403 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		EFA9580E2D7F82AA00BE0939 /* Sumahajo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sumahajo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFA958152D7F82AB00BE0939 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -113,8 +113,8 @@
 				C2B3CD552DC1834D00801BB1 /* FontHandler.swift */,
 				C28977502DB6DBB20000EE77 /* HareDifficulty.swift */,
 				EF39A73E2D94AE2100420EA0 /* ContentView.swift */,
-				EF39A73F2D94AE2100420EA0 /* ProgressBar.swift */,
-				EF39A7432D94AF0500420EA0 /* SpriteTest.swift */,
+				EF39A73F2D94AE2100420EA0 /* RaceAnimationView.swift */,
+				EF39A7432D94AF0500420EA0 /* TortoiseAnimationView.swift */,
 				C2EBC3472D9752E700D17410 /* AppRootView.swift */,
 				C2EBC3492D97538800D17410 /* StartScreenUIView.swift */,
 				EF76046C2DA48A6F00D0C403 /* Test.swift */,
@@ -321,12 +321,12 @@
 				C2B3CD602DC1887400801BB1 /* FontTestView.swift in Sources */,
 				C2EBC34A2D97538800D17410 /* StartScreenUIView.swift in Sources */,
 				C28977512DB6DBBF0000EE77 /* HareDifficulty.swift in Sources */,
-				EF39A7412D94AE2100420EA0 /* ProgressBar.swift in Sources */,
+				EF39A7412D94AE2100420EA0 /* RaceAnimationView.swift in Sources */,
 				EF39A7422D94AE2100420EA0 /* ContentView.swift in Sources */,
 				EF39A7382D94ADEE00420EA0 /* SumahajoApp.swift in Sources */,
 				EF76046D2DA48A6F00D0C403 /* Test.swift in Sources */,
 				C2EBC3482D9752E700D17410 /* AppRootView.swift in Sources */,
-				EF39A7442D94AF0500420EA0 /* SpriteTest.swift in Sources */,
+				EF39A7442D94AF0500420EA0 /* TortoiseAnimationView.swift in Sources */,
 				C2B3CD572DC1835C00801BB1 /* FontHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -122,8 +122,8 @@ struct ContentView: View {
 
     private var progressBars: some View {
         ZStack {
-            ProgressBar(wordGoal: wordGoal, wordCount: $wordCount, isTortoise: true)
-            ProgressBar(wordGoal: wordGoal, wordCount: .constant(hareWordCount), isTortoise: false)
+            RaceAnimationView(wordGoal: wordGoal, wordCount: $wordCount, isTortoise: true)
+            RaceAnimationView(wordGoal: wordGoal, wordCount: .constant(hareWordCount), isTortoise: false)
         }
     }
 

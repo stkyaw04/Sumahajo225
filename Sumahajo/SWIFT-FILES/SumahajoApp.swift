@@ -15,7 +15,7 @@ struct SumahajoApp: App {
     var body: some Scene {
         WindowGroup {
             ViewController()
-            SpriteTest()
+            TortoiseAnimationView()
 
         }
     }

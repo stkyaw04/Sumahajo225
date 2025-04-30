@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ProgressBar: View {
+struct RaceAnimationView: View {
     var wordGoal: Int
     @Binding var wordCount: Int
     var isTortoise: Bool

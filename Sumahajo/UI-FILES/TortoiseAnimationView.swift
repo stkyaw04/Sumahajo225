@@ -6,7 +6,7 @@
 // Tests the movement of the hare and the tortoise
 import SwiftUI
 
-struct SpriteTest: View {
+struct TortoiseAnimationView: View {
     @State private var positionX: CGFloat = 10
     @State private var positionY: CGFloat = 200
     @State private var currentFrame: Int = 1
@@ -36,5 +36,5 @@ struct SpriteTest: View {
 }
 
 #Preview {
-    SpriteTest()
+    TortoiseAnimationView()
 }

@@ -51,7 +51,7 @@ struct StartScreenUIView: View {
                     .scaledToFill()
                     .edgesIgnoringSafeArea(.all)
                     .opacity(0.9)
-                SpriteTest()
+                TortoiseAnimationView()
                     .offset(x:0, y:625)
                 
                 HStack{
