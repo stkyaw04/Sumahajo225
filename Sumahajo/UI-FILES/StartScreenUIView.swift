@@ -97,6 +97,7 @@ struct StartScreenUIView: View {
                 VStack{
                     Text("Welcome to Tortoise and Hare")
                         .font(.pixelfont())
+                        .frame(width: 1000)
                         .padding()
                     
                     HStack{
@@ -106,16 +107,16 @@ struct StartScreenUIView: View {
                             }
                         }
                         .pickerStyle(SegmentedPickerStyle())
-                        .frame(width: 300)
+                        .frame(width: 600)
                     }
-                    Toggle("Timed Mode", isOn: $timedMode)
-                        .frame(width: 300)
-                        .padding()
+//                    Toggle("Timer", isOn: $timedMode)
+//                        .frame(width: 300)
+//                        .padding()
                     
                     TextField("Enter a word goal", text: $inputText)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .onSubmit(startGame)
-                        .frame(width:500)
+                        .frame(width:600)
                         .padding()
                     
                     if let errorMessage = errorMessage{
@@ -124,6 +125,7 @@ struct StartScreenUIView: View {
                             .font(.subheadline)
                     }
                     Button("Start Writing") {
+                        
                         startGame()
                     }
                     .font(.title)

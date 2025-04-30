@@ -10,6 +10,6 @@ import SwiftUI
 
 extension Font {
     static func pixelfont() -> Font{
-        return Font.custom("BalooBhaijaan-Regular", size: 32)
+        return Font.custom("BalooBhaijaan-Regular", size: 64)
     }
 }
