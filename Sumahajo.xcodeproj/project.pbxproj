@@ -3,12 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		C248CEB92DC0302F003EF0EE /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = C248CEB82DC0302F003EF0EE /* ConfettiSwiftUI */; };
 		C28977512DB6DBBF0000EE77 /* HareDifficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28977502DB6DBB20000EE77 /* HareDifficulty.swift */; };
+		C2B3CD572DC1835C00801BB1 /* FontHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B3CD552DC1834D00801BB1 /* FontHandler.swift */; };
+		C2B3CD602DC1887400801BB1 /* FontTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B3CD5F2DC1886800801BB1 /* FontTestView.swift */; };
 		C2EBC3482D9752E700D17410 /* AppRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EBC3472D9752E700D17410 /* AppRootView.swift */; };
 		C2EBC34A2D97538800D17410 /* StartScreenUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EBC3492D97538800D17410 /* StartScreenUIView.swift */; };
 		EF39A7382D94ADEE00420EA0 /* SumahajoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF39A7352D94ADEE00420EA0 /* SumahajoApp.swift */; };
@@ -43,6 +45,9 @@
 
 /* Begin PBXFileReference section */
 		C28977502DB6DBB20000EE77 /* HareDifficulty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HareDifficulty.swift; sourceTree = "<group>"; };
+		C2B3CD542DC1818700801BB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		C2B3CD552DC1834D00801BB1 /* FontHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontHandler.swift; sourceTree = "<group>"; };
+		C2B3CD5F2DC1886800801BB1 /* FontTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontTestView.swift; sourceTree = "<group>"; };
 		C2EBC3472D9752E700D17410 /* AppRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootView.swift; sourceTree = "<group>"; };
 		C2EBC3492D97538800D17410 /* StartScreenUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreenUIView.swift; sourceTree = "<group>"; };
 		EF39A7352D94ADEE00420EA0 /* SumahajoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SumahajoApp.swift; sourceTree = "<group>"; };
@@ -61,6 +66,10 @@
 		EFA9582F2D7F82AB00BE0939 /* SumahajoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SumahajoUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		EFC1D7282DB88902008FAB4D /* NoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		C2B3CD532DC1813200801BB1 /* Fonts */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Fonts; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		EFA9580B2D7F82AA00BE0939 /* Frameworks */ = {
@@ -100,6 +109,8 @@
 		EF39A7402D94AE2100420EA0 /* UI-FILES */ = {
 			isa = PBXGroup;
 			children = (
+				C2B3CD5F2DC1886800801BB1 /* FontTestView.swift */,
+				C2B3CD552DC1834D00801BB1 /* FontHandler.swift */,
 				C28977502DB6DBB20000EE77 /* HareDifficulty.swift */,
 				EF39A73E2D94AE2100420EA0 /* ContentView.swift */,
 				EF39A73F2D94AE2100420EA0 /* ProgressBar.swift */,
@@ -139,6 +150,7 @@
 				EFA958152D7F82AB00BE0939 /* Assets.xcassets */,
 				EFA9581A2D7F82AB00BE0939 /* Sumahajo.entitlements */,
 				EFA958172D7F82AB00BE0939 /* Preview Content */,
+				C2B3CD532DC1813200801BB1 /* Fonts */,
 			);
 			path = Sumahajo;
 			sourceTree = "<group>";
@@ -162,6 +174,7 @@
 		EFA9582C2D7F82AB00BE0939 /* SumahajoUITests */ = {
 			isa = PBXGroup;
 			children = (
+				C2B3CD542DC1818700801BB1 /* Info.plist */,
 				EFA9582D2D7F82AB00BE0939 /* SumahajoUITests.swift */,
 				EFA9582F2D7F82AB00BE0939 /* SumahajoUITestsLaunchTests.swift */,
 			);
@@ -182,6 +195,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				C2B3CD532DC1813200801BB1 /* Fonts */,
 			);
 			name = Sumahajo;
 			productName = Sumahajo;
@@ -302,6 +318,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EFC1D7292DB88902008FAB4D /* NoteViewModel.swift in Sources */,
+				C2B3CD602DC1887400801BB1 /* FontTestView.swift in Sources */,
 				C2EBC34A2D97538800D17410 /* StartScreenUIView.swift in Sources */,
 				C28977512DB6DBBF0000EE77 /* HareDifficulty.swift in Sources */,
 				EF39A7412D94AE2100420EA0 /* ProgressBar.swift in Sources */,
@@ -310,6 +327,7 @@
 				EF76046D2DA48A6F00D0C403 /* Test.swift in Sources */,
 				C2EBC3482D9752E700D17410 /* AppRootView.swift in Sources */,
 				EF39A7442D94AF0500420EA0 /* SpriteTest.swift in Sources */,
+				C2B3CD572DC1835C00801BB1 /* FontHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,6 +492,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Sumahajo/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -502,6 +522,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Sumahajo/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -558,6 +580,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3D4H46YR9Z;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SumahajoUITests/Info.plist;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = edu.macalester.SumahajoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -574,6 +597,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3D4H46YR9Z;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SumahajoUITests/Info.plist;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = edu.macalester.SumahajoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
