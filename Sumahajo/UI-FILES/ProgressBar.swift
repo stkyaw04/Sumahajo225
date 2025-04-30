@@ -20,6 +20,7 @@ struct ProgressBar: View {
     @State private var isWalking = false
     @State private var walkTask: Task<Void, Never>? = nil
     @State private var isAnimating = false
+    @State private var maxWordCount: Int = 0
 
     let tortoiseFrames = ["Tortoise1", "Tortoise2", "Tortoise3"]
     let hareFrames = ["Hare1", "Hare2", "Hare3", "Hare4"]
@@ -50,11 +51,15 @@ struct ProgressBar: View {
                     )
             }
             .onChange(of: wordCount) { newValue in
-                let step = geometry.size.width / CGFloat(wordGoal)
-                targetPosition = CGFloat(newValue) * step
+                if newValue > maxWordCount {
+                        maxWordCount = newValue
+                        
+                        let step = geometry.size.width / CGFloat(wordGoal)
+                        targetPosition = CGFloat(newValue) * step
 
-                walkTask?.cancel()
-                startWalking()
+                        walkTask?.cancel()
+                        startWalking()
+                }
             }
         }
 //        .padding(.top, 40)
