@@ -1,3 +1,10 @@
+//
+//  ContentView.swift
+//  Sumahajo
+//
+//  Created by Su Thiri Kyaw on 4/7/25.
+//  This file holds all the view objects that make up the text field 
+
 import SwiftUI
 import AppKit
 import ConfettiSwiftUI

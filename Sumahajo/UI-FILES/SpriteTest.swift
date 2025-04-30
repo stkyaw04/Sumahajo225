@@ -1,3 +1,9 @@
+//
+//  Test.swift
+//  Sumahajo
+//
+//  Created by Su Thiri Kyaw on 4/7/25.
+// Tests the movement of the hare and the tortoise
 import SwiftUI
 
 struct SpriteTest: View {
