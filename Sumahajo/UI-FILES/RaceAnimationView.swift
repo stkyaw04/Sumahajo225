@@ -1,9 +1,8 @@
 //
-//  ProgressBar.swift
-//  Sumahajo
+//  RaceAnimationView.swift
 //
-//  Created by Joseph Saputra on 3/26/25.
-// Handles the logic and movement for the tortoise
+//  Created by Su Thiri Kyaw on 3/26/25.
+//  Handles the animation movements for both the tortoise and the hare
 
 import SwiftUI
 
@@ -28,19 +27,6 @@ struct RaceAnimationView: View {
     var body: some View {
         GeometryReader { geometry in
             ZStack(alignment: .leading) {
-//                Rectangle()
-//                    .frame(height: 10)
-//                    .foregroundColor(.gray.opacity(0.3))
-//                    .cornerRadius(5)
-
-//                Rectangle()
-//                    .frame(
-//                        width: min(CGFloat(wordCount) / CGFloat(wordGoal) * geometry.size.width, geometry.size.width),
-//                        height: 10
-//                    )
-//                    .foregroundColor(isTortoise ? .green : .red)
-//                    .cornerRadius(5)
-
                 Image((isTortoise ? tortoiseFrames : hareFrames)[currentFrame - 1])
                     .resizable()
                     .scaledToFit()
@@ -62,7 +48,6 @@ struct RaceAnimationView: View {
                 }
             }
         }
-//        .padding(.top, 40)
     }
 
     func startWalking() {
