@@ -8,6 +8,7 @@
 import SwiftUI
 import AppKit
 import ConfettiSwiftUI
+import Pow
 
 struct ContentView: View {
     @State private var userText: String = ""
@@ -76,7 +77,6 @@ struct ContentView: View {
             Spacer(minLength: 150)
             titleSection
             wordCounterSection
-//            progressBars
             fontSizeControls
             textEditorView
            Spacer(minLength: 50)
@@ -116,6 +116,8 @@ struct ContentView: View {
             .font(.title)
             .padding()
             .disabled((!timedMode && wordCount < wordGoal) || hareLogic.gameOver)
+            .buttonStyle(PushDownButtonStyle())
+
         }
         .padding()
     }
@@ -205,8 +207,6 @@ struct ContentView: View {
         )
     }
 
-
-
     private func updateWordCount() {
         let words = userText.split { $0.isWhitespace || $0.isNewline }
         wordCount = words.count
@@ -220,4 +220,20 @@ struct ContentView: View {
         }
     }
 
+}
+
+struct PushDownButtonStyle: ButtonStyle {
+    @Environment(\.isEnabled) private var isEnabled
+    
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .bold()
+            .foregroundStyle(.white)
+            .padding(.vertical, 5)
+            .padding(.horizontal, 20)
+            .background(
+                isEnabled ? Color.green : Color.gray.opacity(0.4), in: Capsule())
+            .opacity(configuration.isPressed ? 0.75 : 1)
+            .conditionalEffect(.pushDown, condition: configuration.isPressed)
+    }
 }

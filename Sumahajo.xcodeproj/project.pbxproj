@@ -24,6 +24,7 @@
 		EFA9582E2D7F82AB00BE0939 /* SumahajoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA9582D2D7F82AB00BE0939 /* SumahajoUITests.swift */; };
 		EFA958302D7F82AB00BE0939 /* SumahajoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA9582F2D7F82AB00BE0939 /* SumahajoUITestsLaunchTests.swift */; };
 		EFC1D7292DB88902008FAB4D /* NoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC1D7282DB88902008FAB4D /* NoteViewModel.swift */; };
+		EFCF40ED2DC2887000293C05 /* Pow in Frameworks */ = {isa = PBXBuildFile; productRef = EFCF40EC2DC2887000293C05 /* Pow */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C248CEB92DC0302F003EF0EE /* ConfettiSwiftUI in Frameworks */,
+				EFCF40ED2DC2887000293C05 /* Pow in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +276,7 @@
 			mainGroup = EFA958052D7F82AA00BE0939;
 			packageReferences = (
 				C248CEB72DC02F83003EF0EE /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */,
+				EFCF40EB2DC2887000293C05 /* XCRemoteSwiftPackageReference "Pow" */,
 			);
 			productRefGroup = EFA9580F2D7F82AA00BE0939 /* Products */;
 			projectDirPath = "";
@@ -657,6 +660,14 @@
 				minimumVersion = 2.0.3;
 			};
 		};
+		EFCF40EB2DC2887000293C05 /* XCRemoteSwiftPackageReference "Pow" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/EmergeTools/Pow.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.5;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -664,6 +675,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C248CEB72DC02F83003EF0EE /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */;
 			productName = ConfettiSwiftUI;
+		};
+		EFCF40EC2DC2887000293C05 /* Pow */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EFCF40EB2DC2887000293C05 /* XCRemoteSwiftPackageReference "Pow" */;
+			productName = Pow;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
