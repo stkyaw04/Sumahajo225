@@ -79,7 +79,7 @@ struct ContentView: View {
             wordCounterSection
             fontSizeControls
             textEditorView
-           Spacer(minLength: 50)
+           Spacer(minLength: 250)
             progressBars
         }
         .padding()
@@ -152,15 +152,19 @@ struct ContentView: View {
     private var textEditorView: some View {
         TextEditor(text: $userText)
             .font(.system(size: fontSize))
-            .frame(height: 500)
+            .lineSpacing(5) // Adds more vertical space between lines
+            .padding(.horizontal, 16) // Add horizontal padding
+            .padding(.vertical, 16)   // Add vertical padding
+            .frame(height: 300)
             .padding(10)
-            .background(Color.white.opacity(0.05))
+            .background(Color.white.opacity(0.15))
             .cornerRadius(10)
             .overlay(
-                RoundedRectangle(cornerRadius: 10)
-                    .stroke(Color.gray.opacity(0.1), lineWidth: 3)
+                RoundedRectangle(cornerRadius: 12)
+                    .stroke(Color.blue.opacity(0.3), lineWidth: 1.5)
             )
-            .padding()
+            .shadow(color: Color.black.opacity(0.1), radius: 4, x: 0, y: 2) // Add a soft shadow for depth
+            .padding()  // Add overall padding around the text editor
             .disabled(hareLogic.gameOver)
             .onChange(of: userText) { _ in updateWordCount() }
     }
