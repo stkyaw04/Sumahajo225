@@ -23,6 +23,8 @@ struct StartScreenUIView: View {
     @Binding var timedMode: Bool
     @Binding var difficulty: String
     let difficulties = ["Easy","Medium","Hard"]
+    @State private var showDifficultyInfo = false
+
     
     @ObservedObject var viewModel: NoteViewModel
     @State private var searchText = ""
@@ -100,15 +102,48 @@ struct StartScreenUIView: View {
                         .frame(width: 1000)
                         .padding()
                     
-                    HStack{
-                        Picker("Difficulty", selection: $difficulty){
-                            ForEach(difficulties, id: \.self){
+                    HStack(spacing: 8) {
+                        Picker("Difficulty", selection: $difficulty) {
+                            ForEach(difficulties, id: \.self) {
                                 level in Text(level)
                             }
                         }
                         .pickerStyle(SegmentedPickerStyle())
-                        .frame(width: 600)
+                        .frame(width: 550)
+
+                        Button(action: {
+                            showDifficultyInfo.toggle()
+                        }) {
+                            Image(systemName: "questionmark.circle.fill")
+                                .font(.title3)
+                                .foregroundColor(.white)
+                                .opacity(0.8)
+                        }
+                        .buttonStyle(.plain)
+                        .popover(isPresented: $showDifficultyInfo, arrowEdge: .bottom) {
+                            VStack(alignment: .leading, spacing: 10) {
+                                Text("Difficulty Levels")
+                                    .font(.headline)
+                                    .padding(.bottom, 5)
+
+                                Text("• Easy: Hare waits 10s and moves slowly.\n• Medium: Hare waits 5s and moves faster.\n• Hard: Hare waits 1s and chases quickly.")
+                                    .multilineTextAlignment(.leading)
+                                    .font(.subheadline)
+                                    .foregroundColor(.primary)
+
+                                Button("Got it") {
+                                    showDifficultyInfo = false
+                                }
+                                .font(.footnote)
+                                .padding(.top, 8)
+                                .frame(maxWidth: .infinity, alignment: .trailing)
+                            }
+                            .padding()
+                            .frame(width: 280)
+                        }
+
                     }
+
 //                    Toggle("Timer", isOn: $timedMode)
 //                        .frame(width: 300)
 //                        .padding()
