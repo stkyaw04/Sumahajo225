@@ -1,93 +1,98 @@
-//
-//  HareDifficulty.swift
-//  Sumahajo
-//
-//  Created by Harold Ponce on 4/21/25.
-//  This file allows the user to change the difficulty of their typing using a timer or by making the hare way faster allowing the use to have a hard mode. Handles hare timing, progress, and difficulty logic
-
 import Foundation
 import SwiftUI
+
 class HareLogicManager: ObservableObject {
     @Published var hareProgress: CGFloat = 0
-    @Published var timeRemaining: Int = 0
     @Published var gameOver: Bool = false
-    private var timer: Timer?
-    private var lastTypedTime = Date()
-    private var isTimedMode = false
+    @Published var userHasWon: Bool = false
+
+    private var chaseTimer: Timer?
+    private var idleDetectionTimer: Timer?
+
     private var difficulty: String = ""
     private var wordGoal: Int = 50
 
-    func configure(timedMode: Bool, difficulty: String, wordGoal: Int) {
-        self.isTimedMode = timedMode
-        self.difficulty = difficulty
+    private var idleDelay: TimeInterval = 10.0
+    private var chaseInterval: TimeInterval = 2.0
+
+    func configure(difficulty: String, wordGoal: Int) {
+        self.difficulty = difficulty.lowercased()
         self.wordGoal = wordGoal
+        self.userHasWon = false
+        self.gameOver = false
+        self.hareProgress = 0
+        stopAllTimers()
+        configureDifficultyTimings()
     }
 
     func start() {
-        if isTimedMode {
-            startHareCountDown()
-        } else {
-            startHareChase()
-        }
-    }
-
-    func updateLastTypedTime() {
-        lastTypedTime = Date()
+        // Nothing happens at start
     }
 
     func stop() {
-        timer?.invalidate()
-        timer = nil
+        stopAllTimers()
     }
 
-    private func startHareChase() {
-        timer = Timer.scheduledTimer(withTimeInterval: hareSpeedMultiplier(), repeats: true) { _ in
-            if self.gameOver { return }
+    func userFinished() {
+        guard !userHasWon && !gameOver else { return }
+        userHasWon = true
+        gameOver = true
+        stopAllTimers()
+    }
 
-            let elapsed = Date().timeIntervalSince(self.lastTypedTime)
-            if elapsed >= 2 {
-                DispatchQueue.main.async {
-                    self.hareProgress = min(self.hareProgress + 1, CGFloat(self.wordGoal))
-                    if self.hareProgress >= CGFloat(self.wordGoal) {
-                        self.stop()
-                        self.gameOver = true
-                    }
-                }
-            }
+    func updateLastTypedTime() {
+        guard !gameOver && !userHasWon else { return }
+        stopChaseTimer()
+        resetIdleDetectionTimer()
+    }
+
+    private func configureDifficultyTimings() {
+        switch difficulty {
+        case "easy":
+            idleDelay = 10
+            chaseInterval = 2.0
+        case "medium":
+            idleDelay = 5
+            chaseInterval = 1.5
+        case "hard":
+            idleDelay = 1
+            chaseInterval = 1.0
+        default:
+            idleDelay = 10
+            chaseInterval = 2.0
         }
     }
 
-     func startHareCountDown() {
-        timeRemaining = initialTimeForDifficulty()
-        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
-            if self.gameOver { return }
+    private func resetIdleDetectionTimer() {
+        idleDetectionTimer?.invalidate()
+        idleDetectionTimer = Timer.scheduledTimer(withTimeInterval: idleDelay, repeats: false) { _ in
+            self.startChaseTimer()
+        }
+    }
 
+    private func startChaseTimer() {
+        stopChaseTimer()
+        chaseTimer = Timer.scheduledTimer(withTimeInterval: chaseInterval, repeats: true) { _ in
             DispatchQueue.main.async {
-                self.timeRemaining -= 1
-                if self.timeRemaining <= 0 {
-                    self.stop()
+                guard !self.gameOver && !self.userHasWon else { return }
+                self.hareProgress = min(self.hareProgress + 1, CGFloat(self.wordGoal))
+                if self.hareProgress >= CGFloat(self.wordGoal) {
                     self.gameOver = true
+                    self.stopAllTimers()
                 }
             }
         }
     }
 
-    // Controls how fast the hare *ticks* in seconds per step
-    func hareSpeedMultiplier() -> Double {
-        switch difficulty.lowercased() {
-        case "easy": return 2.0   // slower
-        case "medium": return 1.5
-        case "hard": return 1   // faster
-        default: return 2.0
-        }
+    private func stopChaseTimer() {
+        chaseTimer?.invalidate()
+        chaseTimer = nil
     }
 
-    private func initialTimeForDifficulty() -> Int {
-        switch difficulty.lowercased() {
-        case "easy": return 5 * wordGoal
-        case "medium": return 2 * wordGoal
-        case "hard": return 1 * wordGoal
-        default: return 10
-        }
+    private func stopAllTimers() {
+        chaseTimer?.invalidate()
+        idleDetectionTimer?.invalidate()
+        chaseTimer = nil
+        idleDetectionTimer = nil
     }
 }

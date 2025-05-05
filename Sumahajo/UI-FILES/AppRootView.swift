@@ -19,7 +19,7 @@ struct ViewController: View {
             ContentView(
                 showContentView: $showContentView,
                 wordGoal: $wordGoal,
-                noteViewModel: viewModel, timedMode: timedMode,
+                noteViewModel: viewModel,
                 difficulty: difficulty
             )
         } else {

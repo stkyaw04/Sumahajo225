@@ -3,7 +3,7 @@
 //  Sumahajo
 //
 //  Created by Su Thiri Kyaw on 4/7/25.
-//  This file holds all the view objects that make up the text field 
+//
 
 import SwiftUI
 import AppKit
@@ -25,15 +25,12 @@ struct ContentView: View {
     @State private var showLibrary = false
     @State private var confettiTrigger = 0
     @State private var hasCelebrated = false
-    
-    
 
     @Binding var showContentView: Bool
     @Binding var wordGoal: Int
     @ObservedObject var noteViewModel: NoteViewModel
     @StateObject private var hareLogic = HareLogicManager()
 
-    let timedMode: Bool
     let difficulty: String
 
     var body: some View {
@@ -53,7 +50,7 @@ struct ContentView: View {
             .sheet(isPresented: $showingNameInput, content: { draftNamingSheet })
             .navigationDestination(isPresented: $showLibrary) { StartScreenViewWrapper }
             .onAppear {
-                hareLogic.configure(timedMode: timedMode, difficulty: difficulty, wordGoal: wordGoal)
+                hareLogic.configure(difficulty: difficulty, wordGoal: wordGoal)
                 hareLogic.start()
             }
             .onReceive(hareLogic.$hareProgress) { value in
@@ -62,7 +59,7 @@ struct ContentView: View {
         }
     }
 
-    //  Components
+    // MARK: - Components
 
     private var backgroundView: some View {
         Image("Background")
@@ -79,7 +76,7 @@ struct ContentView: View {
             wordCounterSection
             fontSizeControls
             textEditorView
-           Spacer(minLength: 250)
+            Spacer(minLength: 250)
             progressBars
         }
         .padding()
@@ -90,34 +87,27 @@ struct ContentView: View {
             Text("Tortoise vs Hare")
                 .font(.title)
                 .bold()
-                .foregroundColor(gameOver ? .red : .primary)
-
-            if timedMode {
-                Text("Time Remaining: \(hareLogic.timeRemaining)s")
-                    .font(.headline)
-                    .foregroundColor(.blue)
-            }
+                .foregroundColor(hareLogic.userHasWon ? .green : (hareLogic.gameOver ? .red : .primary))
 
             if hareLogic.gameOver {
-                Text(timedMode ? "Time’s up! The hare wins." : "Game Over! The hare won.")
+                Text(hareLogic.userHasWon ? "You won! Great job 🐢🎉" : "Game Over! The hare won.")
                     .font(.headline)
-                    .foregroundColor(.red)
+                    .foregroundColor(hareLogic.userHasWon ? .green : .red)
             }
         }
     }
 
     private var wordCounterSection: some View {
         HStack {
-            Text(timedMode ? "Words Written: \(wordCount)" : "Word Count: \(wordCount)/\(wordGoal)").bold()
+            Text("Word Count: \(wordCount)/\(wordGoal)").bold()
             Spacer()
             Button("Save Your Draft") {
                 showingNameInput = true
             }
             .font(.title)
             .padding()
-            .disabled((!timedMode && wordCount < wordGoal) || hareLogic.gameOver)
+            .disabled(wordCount < wordGoal || (hareLogic.gameOver && !hareLogic.userHasWon))
             .buttonStyle(PushDownButtonStyle())
-
         }
         .padding()
     }
@@ -152,9 +142,9 @@ struct ContentView: View {
     private var textEditorView: some View {
         TextEditor(text: $userText)
             .font(.system(size: fontSize))
-            .lineSpacing(5) // Adds more vertical space between lines
-            .padding(.horizontal, 16) // Add horizontal padding
-            .padding(.vertical, 16)   // Add vertical padding
+            .lineSpacing(5)
+            .padding(.horizontal, 16)
+            .padding(.vertical, 16)
             .frame(height: 300)
             .padding(10)
             .background(Color.white.opacity(0.15))
@@ -163,9 +153,9 @@ struct ContentView: View {
                 RoundedRectangle(cornerRadius: 12)
                     .stroke(Color.blue.opacity(0.3), lineWidth: 1.5)
             )
-            .shadow(color: Color.black.opacity(0.1), radius: 4, x: 0, y: 2) // Add a soft shadow for depth
-            .padding()  // Add overall padding around the text editor
-            .disabled(hareLogic.gameOver)
+            .shadow(color: Color.black.opacity(0.1), radius: 4, x: 0, y: 2)
+            .padding()
+            .disabled(hareLogic.gameOver && !hareLogic.userHasWon)
             .onChange(of: userText) { _ in updateWordCount() }
     }
 
@@ -205,7 +195,7 @@ struct ContentView: View {
         StartScreenUIView(
             showContentView: $showContentView,
             wordGoal: $wordGoal,
-            timedMode: .constant(timedMode),
+            timedMode: .constant(false),  // no longer used make it false
             difficulty: .constant(difficulty),
             viewModel: noteViewModel
         )
@@ -215,20 +205,21 @@ struct ContentView: View {
         let words = userText.split { $0.isWhitespace || $0.isNewline }
         wordCount = words.count
         lastTypedTime = Date()
+        hareLogic.updateLastTypedTime()
         turtleProgress = CGFloat(wordCount) / CGFloat(wordGoal)
 
         if wordCount >= wordGoal && !hasCelebrated {
             hasCelebrated = true
             timer?.invalidate()
             confettiTrigger += 1
+            hareLogic.userFinished()
         }
     }
-
 }
 
 struct PushDownButtonStyle: ButtonStyle {
     @Environment(\.isEnabled) private var isEnabled
-    
+
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .bold()
@@ -236,7 +227,8 @@ struct PushDownButtonStyle: ButtonStyle {
             .padding(.vertical, 5)
             .padding(.horizontal, 20)
             .background(
-                isEnabled ? Color.green : Color.gray.opacity(0.4), in: Capsule())
+                isEnabled ? Color.green : Color.gray.opacity(0.4), in: Capsule()
+            )
             .opacity(configuration.isPressed ? 0.75 : 1)
             .conditionalEffect(.pushDown, condition: configuration.isPressed)
     }

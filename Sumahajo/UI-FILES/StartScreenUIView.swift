@@ -96,7 +96,7 @@ struct StartScreenUIView: View {
                 
                 VStack{
                     Text("Welcome to Tortoise and Hare")
-                        .font(.pixelfont())
+                        .font(.pixelFont())
                         .frame(width: 1000)
                         .padding()
                     
@@ -259,6 +259,3 @@ struct EditDraftView: View {
 //#Preview {StartScreenUIView(showContentView: .constant(false),wordGoal: .constant(0),timedMode: .constant(false),difficulty: .constant("Easy")
 //)
 //}
-
-
-
