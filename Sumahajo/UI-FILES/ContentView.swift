@@ -90,7 +90,7 @@ struct ContentView: View {
                 .foregroundColor(hareLogic.userHasWon ? .green : (hareLogic.gameOver ? .red : .primary))
 
             if hareLogic.gameOver {
-                Text(hareLogic.userHasWon ? "You won! Great job 🐢🎉" : "Game Over! The hare won.")
+                Text(hareLogic.userHasWon ? "You won! Great job" : "Game Over! The hare won.")
                     .font(.headline)
                     .foregroundColor(hareLogic.userHasWon ? .green : .red)
             }
