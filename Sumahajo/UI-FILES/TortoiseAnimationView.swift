@@ -3,7 +3,8 @@
 //  Sumahajo
 //
 //  Created by Su Thiri Kyaw on 4/7/25.
-// Tests the movement of the hare and the tortoise
+// This file is purely for testing Tortoise Sprite movement through word count changes which is simulated by pushing a button
+
 import SwiftUI
 
 struct TortoiseAnimationView: View {
@@ -15,8 +16,7 @@ struct TortoiseAnimationView: View {
 
     var body: some View {
         VStack {
-            Image(frames[currentFrame - 1]) // Display the current frame
-//                .resizable()
+            Image(frames[currentFrame - 1]) 
                 .scaledToFit()
                 .frame(width: 800, height: 300)
                 .position(x: positionX, y: positionY)

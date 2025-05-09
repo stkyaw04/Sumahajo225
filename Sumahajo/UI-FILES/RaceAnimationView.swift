@@ -2,7 +2,7 @@
 //  RaceAnimationView.swift
 //
 //  Created by Su Thiri Kyaw on 3/26/25.
-//  Handles the animation movements for both the tortoise and the hare
+//  Handles the sprite animation movements for both the tortoise and the hare
 
 import SwiftUI
 
@@ -27,22 +27,26 @@ struct RaceAnimationView: View {
     var body: some View {
         GeometryReader { geometry in
             ZStack(alignment: .leading) {
+                // Display current sprite frame based on character type and animation frame
                 Image((isTortoise ? tortoiseFrames : hareFrames)[currentFrame - 1])
                     .resizable()
                     .scaledToFit()
                     .frame(width: 70, height: 70)
                     .position(
                         x: isTortoise ? tortoisePosition : harePosition,
-                        y: -10
+                        y: -10 // adjust vertical alignment as needed
                     )
             }
+            // When wordCount increases, update the target position and trigger animation
             .onChange(of: wordCount) { newValue in
                 if newValue > maxWordCount {
                         maxWordCount = newValue
                         
+                        // Calculate horizontal step size per word
                         let step = geometry.size.width / CGFloat(wordGoal)
                         targetPosition = CGFloat(newValue) * step
 
+                        // Cancel any existing walk animation task before starting a new one to avoid any glitches or running multiple sequences
                         walkTask?.cancel()
                         startWalking()
                 }
@@ -50,6 +54,8 @@ struct RaceAnimationView: View {
         }
     }
 
+    /// Starts the walking animation toward the current target position.
+    /// Moves the character in small increments and updates frames to simulate walking.
     func startWalking() {
         isAnimating = true
         startAnimatingFrames()
@@ -64,10 +70,12 @@ struct RaceAnimationView: View {
             while !Task.isCancelled && abs((isTortoise ? tortoisePosition : harePosition) - targetPosition) > 0.5 {
                 try? await Task.sleep(nanoseconds: frameDuration)
 
+                // Compute how much to move this frame
                 let currentPos = isTortoise ? tortoisePosition : harePosition
                 let distance = targetPosition - currentPos
                 let move = min(abs(distance), (isTortoise ? tortoiseSpeed : hareSpeed) / 25.0) * (distance < 0 ? -1 : 1)
 
+                // Apply movement to specific character
                 if isTortoise {
                     tortoisePosition += move
                 } else {
@@ -76,12 +84,14 @@ struct RaceAnimationView: View {
                     }
                 }
 
+                // Update frame every 6 ticks (~4 frames per second for step cycle)
                 lastFrameUpdate += 1
                 if lastFrameUpdate % 6 == 0 {
                     currentFrame = (currentFrame % 3) + 1
                 }
             }
 
+            // Stop exactly at target when animation ends
             if !Task.isCancelled {
                 if isTortoise {
                     tortoisePosition = targetPosition
@@ -96,6 +106,7 @@ struct RaceAnimationView: View {
         }
     }
     
+    /// Loops through sprite frames to simulate walking while the character is moving.
     func startAnimatingFrames() {
         Task {
             while isAnimating {
