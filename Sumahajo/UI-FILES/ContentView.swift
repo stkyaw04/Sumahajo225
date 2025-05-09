@@ -84,7 +84,7 @@ struct ContentView: View {
 
     private var titleSection: some View {
         VStack(spacing: 5) {
-            Text("Tortoise vs Hare")
+            Text("Draft Race")
                 .font(.title)
                 .bold()
                 .foregroundColor(hareLogic.userHasWon ? .green : (hareLogic.gameOver ? .red : .primary))

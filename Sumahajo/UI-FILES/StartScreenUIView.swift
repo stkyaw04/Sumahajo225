@@ -97,7 +97,7 @@ struct StartScreenUIView: View {
                     
                 
                 VStack{
-                    Text("Welcome to Tortoise and Hare")
+                    Text("Draft Race")
                         .font(.pixelFont())
                         .frame(width: 1000)
                         .padding()
