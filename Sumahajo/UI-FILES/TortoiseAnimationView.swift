@@ -1,9 +1,9 @@
 //
-//  Test.swift
+//  TortoiseAnimation.swift
 //  Sumahajo
 //
 //  Created by Su Thiri Kyaw on 4/7/25.
-// This file is purely for testing Tortoise Sprite movement through word count changes which is simulated by pushing a button
+//  This file is purely to animate the Tortoise sprite walking continuously in a straight line
 
 import SwiftUI
 

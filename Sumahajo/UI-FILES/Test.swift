@@ -3,7 +3,7 @@
 //  Sumahajo
 //
 //  Created by Su Thiri Kyaw on 4/7/25.
-//
+//  This file is purely for testing Tortoise Sprite movement through word count changes which is simulated by pushing a button
 
 import SwiftUI
 
