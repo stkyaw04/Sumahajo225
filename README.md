@@ -15,40 +15,27 @@ A fun, interactive writing app where you race a tortoise against a virtual hare 
 ##Features
 
 Writing Race: Reach your set word goal before the animated hare catches up.
-
 Animated Sprites: Tortoise and hare move across the screen as you write.
-
 Custom Font: Uses a pixel-style font for retro aesthetics.
-
 Draft Saving & Editing: Save, search, and edit your drafts.
-
 Difficulty Levels: Adjust how fast the hare chases you.
-
 Celebratory Confetti: Visual feedback when you win.
 
 ##Dependencies
 
 SwiftUI (macOS app)
-
 AppKit (for some macOS-specific features)
-
 ConfettiSwiftUI (confetti animation)
-
 Pow (button effects)
-
 Custom Font (FatPix-Regular)
-
 Image Assets (sprite frames and backgrounds)
 
 
 ##How It Works
-Start Screen: Choose your word goal and difficulty. You can also search, open, or delete previous drafts.
-
-Writing Race: As you type, the tortoise moves forward. If you stop, the hare starts chasing based on the difficulty level.
-
-Win Condition: Reach your word goal before the hare catches up.
-
-Draft Management: Save your finished drafts, name them, and revisit or edit them later.
+-Start Screen: Choose your word goal and difficulty. You can also search, open, or delete previous drafts.
+-Writing Race: As you type, the tortoise moves forward. If you stop, the hare starts chasing based on the difficulty level.
+-Win Condition: Reach your word goal before the hare catches up.
+-Draft Management: Save your finished drafts, name them, and revisit or edit them later.
 
 # Usage Guide
 
@@ -62,7 +49,7 @@ Draft Management: Save your finished drafts, name them, and revisit or edit them
 
 3. Writing Interface 
    - Type in the editor. Your word count and progress are shown.
-   - Animated tortoise (you) and hare (AI) move as you write.
+   - Animated tortoise (you) and hare (Animated) move as you write.
    - Adjust font size with plus/minus buttons.
    - Save your draft when you reach your goal.
 
@@ -73,18 +60,18 @@ Draft Management: Save your finished drafts, name them, and revisit or edit them
 ---
 ## App Structure
 
-| File                         | Purpose                                                    |
-|------------------------------|------------------------------------------------------------|
-| `SumahajoApp.swift`          | App entry point, launches fullscreen, loads root view      |
-| `ViewHandler.swift`          | Handles navigation between start screen and writing view   |
-| `StartScreenUIView.swift`    | Start screen: set word goal, difficulty, manage drafts     |
-| `DraftView.swift`            | Main writing interface, race logic, draft saving           |
-| `HareLogicHandler.swift`     | Controls hare’s speed and game-over logic                  |
-| `RaceAnimationView.swift`    | Animates tortoise and hare sprites                         |
+| File                          | Purpose                                                    |
+|-------------------------------|------------------------------------------------------------|
+| `SumahajoApp.swift`           | App entry point, launches fullscreen, loads root view      |
+| `ViewHandler.swift`           | Handles navigation between start screen and writing view   |
+| `StartScreenUIView.swift`     | Start screen: set word goal, difficulty, manage drafts     |
+| `DraftView.swift`             | Main writing interface, race logic, draft saving           |
+| `HareLogicHandler.swift`      | Controls hare’s speed and game-over logic                  |
+| `RaceAnimationView.swift`     | Animates tortoise and hare sprites                         |
 | `TortoiseAnimationView.swift` | Animates tortoise for background visuals                   |
-| `FontHandler.swift`          | Adds custom font support                                   |
-| `NoteViewModel.swift`        | Handles file saving, loading, and deletion for drafts      |
-| `EditDraftView.swift`        | Lets you edit saved drafts                                 |
+| `FontHandler.swift`           | Adds custom font support                                   |
+| `NoteViewModel.swift`         | Handles file saving, loading, and deletion for drafts      |
+| `EditDraftView.swift`         | Lets you edit saved drafts                                 |
 
 #Draft Management
 Saving: Click "Save Your Draft" after reaching your goal.
