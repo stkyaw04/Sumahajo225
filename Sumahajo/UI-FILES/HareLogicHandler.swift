@@ -63,16 +63,16 @@ class HareLogicHandler: ObservableObject {
     private func configureDifficultyTimings() {
         switch difficulty {
         case "easy":
-            idleDelay = 10
+            idleDelay = 3.5
             chaseInterval = 2.0
         case "medium":
-            idleDelay = 5
+            idleDelay = 2
             chaseInterval = 1.5
         case "hard":
-            idleDelay = 1
+            idleDelay = 0.5
             chaseInterval = 1.0
         default:
-            idleDelay = 10
+            idleDelay = 3
             chaseInterval = 2.0
         }
     }
