@@ -52,21 +52,21 @@ Draft Management: Save your finished drafts, name them, and revisit or edit them
 
 # Usage Guide
 
-1. **Launch the App:**  
+1. Launch the App  
    The app starts in fullscreen with the Start Screen.
 
-2. **Set Up Your Race:**  
+2. Set Up Your Race  
    - Enter your word goal.
    - Choose a difficulty (Easy, Medium, Hard).
    - Click "Start Writing" to begin.
 
-3. **Writing Interface:**  
+3. Writing Interface 
    - Type in the editor. Your word count and progress are shown.
    - Animated tortoise (you) and hare (AI) move as you write.
    - Adjust font size with plus/minus buttons.
    - Save your draft when you reach your goal.
 
-4. **Manage Drafts:**  
+4. Manage Drafts  
    - View, search, open, and delete saved drafts from the start screen.
    - Edit drafts by opening them from the library.
 
@@ -81,7 +81,7 @@ Draft Management: Save your finished drafts, name them, and revisit or edit them
 | `DraftView.swift`            | Main writing interface, race logic, draft saving           |
 | `HareLogicHandler.swift`     | Controls hare’s speed and game-over logic                  |
 | `RaceAnimationView.swift`    | Animates tortoise and hare sprites                         |
-| `TortoiseAnimationView.swift'| Animates tortoise for background visuals                   |
+| `TortoiseAnimationView.swift` | Animates tortoise for background visuals                   |
 | `FontHandler.swift`          | Adds custom font support                                   |
 | `NoteViewModel.swift`        | Handles file saving, loading, and deletion for drafts      |
 | `EditDraftView.swift`        | Lets you edit saved drafts                                 |
@@ -94,6 +94,7 @@ Naming: Enter a name for your draft in the popup.
 Editing: Open drafts from the library to edit and re-save.
 
 Deleting: Remove drafts from the library with the "Delete" button.
+
 
 ## Game Modes & Difficulty
 
@@ -109,12 +110,12 @@ Deleting: Remove drafts from the library with the "Delete" button.
 
 ## Important Notes
 
-- **Fullscreen:** The app opens in fullscreen by default.
-- **Sprite Assets:** Make sure all image assets (tortoise, hare frames, backgrounds) are included in the asset catalog.
-- **macOS Only:** Uses AppKit features, so it is not iOS compatible out of the box.
-- **Drafts Location:** Drafts are saved as files in the app’s Documents directory.
+- Fullscreen: The app opens in fullscreen by default.
+- prite Assets: Make sure all image assets (tortoise, hare frames, backgrounds) are included in the asset catalog.
+- macOS Only: Uses AppKit features, so it is not iOS compatible out of the box.
+- Drafts Location: Drafts are saved as files in the app’s Documents directory.
 
 
 ## Credits
 
-- **Authors:** Joseph Saputra, Harold Ponce, Su Thiri Kyaw, Makol Chuol
+- Authors: Joseph Saputra, Harold Ponce, Su Thiri Kyaw, Makol Chuol
