@@ -126,7 +126,7 @@ struct StartScreenUIView: View {
                                     .font(.headline)
                                     .padding(.bottom, 5)
 
-                                Text("• Easy: Hare waits 10s and moves slowly.\n• Medium: Hare waits 5s and moves faster.\n• Hard: Hare waits 1s and chases quickly.")
+                                Text("• Easy: Hare waits 2s and moves slowly.\n• Medium: Hare waits 1s and moves faster.\n• Hard: Hare waits 0.5s and chases quickly.")
                                     .multilineTextAlignment(.leading)
                                     .font(.subheadline)
                                     .foregroundColor(.primary)
@@ -210,11 +210,11 @@ struct EditDraftView: View {
                 Spacer(minLength: 10)
 
                 Text("Edit Your Draft")
-                    .font(.title)
+                    .font(.pixelFont())
                     .bold()
 
                 Text("Word Count: \(wordCount)")
-                    .font(.subheadline)
+                    .font(.subheadline).bold()
                     .foregroundColor(.white.opacity(0.8))
 
                 HStack {
@@ -254,11 +254,11 @@ struct EditDraftView: View {
                     viewModel.saveFile()
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                         dismiss()
-                    }
-                }
+                    }                }
                 .font(.title3)
                 .padding()
-                .buttonStyle(.borderedProminent)
+                .buttonStyle(PushDownButtonStyle())
+
 
                 Spacer()
             }
@@ -287,7 +287,6 @@ struct EditDraftView: View {
         wordCount = words.count
     }
 }
-
 
 
 //

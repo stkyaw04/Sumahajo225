@@ -25,6 +25,8 @@ struct ContentView: View {
     @State private var showLibrary = false
     @State private var confettiTrigger = 0
     @State private var hasCelebrated = false
+    @State private var showBackAlert = false
+
 
     @Binding var showContentView: Bool
     @Binding var wordGoal: Int
@@ -56,6 +58,14 @@ struct ContentView: View {
             .onReceive(hareLogic.$hareProgress) { value in
                 hareWordCount = Int(min(value, CGFloat(wordGoal)))
             }
+            .alert("Are you sure?", isPresented: $showBackAlert) {
+                        Button("Go Back", role: .destructive) {
+                            showContentView = false // ← this will now trigger
+                        }
+                        Button("Cancel", role: .cancel) {}
+                    } message: {
+                        Text("Your draft won't be saved.")
+                    }
         }
     }
 
@@ -72,20 +82,48 @@ struct ContentView: View {
     private var mainContent: some View {
         VStack {
             Spacer(minLength: 150)
-            titleSection
+
+            // Title + Back Button Row
+            HStack {
+                // Back Button aligned left
+                Button(action: {
+                    showBackAlert = true
+                }) {
+                    Image(systemName: "arrow.left")
+                        .font(.title)
+                        .bold()
+                        .foregroundColor(.red)
+                        .padding(8)
+                        .background(Color.red.opacity(0.15))
+                        .clipShape(Circle())
+                }
+
+                Spacer()
+
+                // Centered title using ZStack
+                ZStack {
+                    titleSection
+                }
+                .frame(maxWidth: .infinity)
+
+                Spacer() // to balance the layout
+            }
+            .padding(.horizontal)
+
             wordCounterSection
             fontSizeControls
             textEditorView
-            Spacer(minLength: 250)
+            Spacer(minLength: 210)
             progressBars
         }
         .padding()
     }
 
+
     private var titleSection: some View {
         VStack(spacing: 5) {
             Text("Draft Race")
-                .font(.title)
+                .font(.pixelFont())
                 .bold()
                 .foregroundColor(hareLogic.userHasWon ? .green : (hareLogic.gameOver ? .red : .primary))
 
