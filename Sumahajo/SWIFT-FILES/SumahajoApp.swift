@@ -4,6 +4,9 @@
 //
 //  Created by Su Thiri Kyaw on 3/10/25.
 //
+//  Main entry point for the Sumahajo app.
+//  Launches the root view and triggers fullscreen mode on startup.
+//
 
 import SwiftUI
 
@@ -14,7 +17,7 @@ struct SumahajoApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ViewController()
+            ViewHandler()
             TortoiseAnimationView()
 
         }

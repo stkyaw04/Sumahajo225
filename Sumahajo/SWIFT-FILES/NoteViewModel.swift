@@ -4,6 +4,10 @@
 //
 //  Created by Joseph Saputra on 4/22/25.
 //
+//  Handles loading, saving, and deleting text drafts from the local file system.
+//  Maintains current draft state and provides file list for the UI.
+//
+
 import SwiftUI
 import Foundation
 

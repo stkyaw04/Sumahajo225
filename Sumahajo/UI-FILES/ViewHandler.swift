@@ -3,28 +3,29 @@
 //  Sumahajo
 //
 //  Created by Harold Ponce on 3/28/25.
-//
+//  It manages the transition between the start screen (StartScreenUIView)
+//  and the main writing interface (DraftView).
 
 import SwiftUI
 
-struct ViewController: View {
-    @State private var showContentView = false
+struct ViewHandler: View {
+    @State private var showDraftView = false
     @State private var wordGoal: Int = 0
     @State private var timedMode: Bool = false
     @State private var difficulty: String = "Easy"
     @StateObject private var viewModel = NoteViewModel()
 
     var body: some View {
-        if showContentView {
-            ContentView(
-                showContentView: $showContentView,
+        if showDraftView {
+            DraftView(
+                showDraftView: $showDraftView,
                 wordGoal: $wordGoal,
                 noteViewModel: viewModel,
                 difficulty: difficulty
             )
         } else {
             StartScreenUIView(
-                showContentView: $showContentView,
+                showContentView: $showDraftView,
                 wordGoal: $wordGoal,
                 timedMode: $timedMode,
                 difficulty: $difficulty,
@@ -34,5 +35,5 @@ struct ViewController: View {
     }
 }
 #Preview {
-    ViewController()
+    ViewHandler()
 }
