@@ -1,9 +1,8 @@
 //
 //  RaceAnimationView.swift
 //
-//  Created by Su Thiri Kyaw on 3/26/25.
-//  Handles the sprite animation movements for both the tortoise and the hare
-
+//  Authors: Su Thiri Kyaw
+//  Handles the sprite animation movements for both the tortoise and the hare sprites while race is in progress
 import SwiftUI
 
 struct RaceAnimationView: View {
@@ -54,8 +53,8 @@ struct RaceAnimationView: View {
         }
     }
 
-    /// Starts the walking animation toward the current target position.
-    /// Moves the character in small increments and updates frames to simulate walking.
+    /// Starts the sprite's walking animation toward the current target position that is based on the current word count and word goal.
+    /// Moves the character in small increments and uses frame-by-frame animation to simulate walking.
     func startWalking() {
         isAnimating = true
         startAnimatingFrames()
@@ -118,5 +117,5 @@ struct RaceAnimationView: View {
 }
 
 //#Preview {
-//    ProgressBar(wordGoal: 100)  // Pass custom values to preview
+//    ProgressBar(wordGoal: 100)  // Pass a value to preview
 //}

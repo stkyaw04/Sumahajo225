@@ -1,9 +1,8 @@
 //
 //  TortoiseAnimation.swift
-//  Sumahajo
 //
-//  Created by Su Thiri Kyaw on 4/7/25.
-//  This file is purely to animate the Tortoise sprite walking continuously in a straight line
+//  Authors: Su Thiri Kyaw
+//  This file is purely to animate the Tortoise sprite walking continuously in a straight line 
 
 import SwiftUI
 
