@@ -126,7 +126,7 @@ struct StartScreenUIView: View {
                                     .font(.headline)
                                     .padding(.bottom, 5)
 
-                                Text("• Easy: Hare waits 2s and moves slowly.\n• Medium: Hare waits 1s and moves faster.\n• Hard: Hare waits 0.5s and chases quickly.")
+                                Text("• Easy: Hare waits 3.5s and moves slowly.\n• Medium: Hare waits 2s and moves faster.\n• Hard: Hare waits 0.5s and chases quickly.")
                                     .multilineTextAlignment(.leading)
                                     .font(.subheadline)
                                     .foregroundColor(.primary)
