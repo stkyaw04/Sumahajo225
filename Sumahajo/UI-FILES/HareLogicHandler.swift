@@ -1,7 +1,21 @@
+//
+//  HareLogicHandler.swift
+//  Draft Race
+//
+//  Authors: Joseph Saputra, Harold Ponce on 4/20/25.
+//
+//  This file defines the HareLogicManager that controls the hares speed.
+//  Key responsibilities:
+//  - Configures behavior based on difficulty (easy, medium, hard)
+//  - Uses timers to detect typing inactivity and control the hare's speed
+//  - Updates progress and determines game over conditions
+//  - Supports user victory detection and resets
+//
+
 import Foundation
 import SwiftUI
 
-class HareLogicManager: ObservableObject {
+class HareLogicHandler: ObservableObject {
     @Published var hareProgress: CGFloat = 0
     @Published var gameOver: Bool = false
     @Published var userHasWon: Bool = false

@@ -1,9 +1,11 @@
 //
 //  StartScreenUIView.swift
-//  Sumahajo
+//  Draft Race
 //
 //  Created by Harold Ponce on 3/28/25.
 //
+//  This is the start screen interface for the Sumahajo app.
+//  The view is backed by NoteViewModel, which handles file loading, saving, and deletion.
 
 import SwiftUI
 import Foundation
@@ -222,7 +224,7 @@ struct EditDraftView: View {
 
                     Button(action: { fontSize = max(12, fontSize - 2) }) {
                         Image(systemName: "minus.circle")
-                    }
+                     }
 
                     Text("\(Int(fontSize))")
                         .frame(width: 30)

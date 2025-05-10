@@ -1,10 +1,13 @@
+//  DraftView.swift
+//  Draft Race
 //
-//  ContentView.swift
-//  Sumahajo
+//  Authors: Joseph Saputra, Makol Chuol, Su on 4/18/25.
 //
-//  Created by Harold Ponce on 5/10/25.
+//  This file is the main writing interface for the Draft Race app.
+//  Users race against a virtual hare by reaching a word goal before the hare "catches up".
+//  Integrates with NoteViewModel for draft persistence,
+//  and supports navigation back to the StartScreenUIView.
 //
-
 
 import SwiftUI
 import AppKit
@@ -29,7 +32,7 @@ struct DraftView: View {
     @State private var showBackAlert = false
 
 
-    @Binding var showContentView: Bool
+    @Binding var showDraftView: Bool
     @Binding var wordGoal: Int
     @ObservedObject var noteViewModel: NoteViewModel
     @StateObject private var hareLogic = HareLogicHandler()
@@ -61,7 +64,7 @@ struct DraftView: View {
             }
             .alert("Are you sure?", isPresented: $showBackAlert) {
                         Button("Go Back", role: .destructive) {
-                            showContentView = false // ← this will now trigger
+                            showDraftView = false // ← this will now trigger
                         }
                         Button("Cancel", role: .cancel) {}
                     } message: {
@@ -219,7 +222,7 @@ struct DraftView: View {
                     showingNameInput = false
                     draftName = ""
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-                        showContentView = false
+                        showDraftView = false
                         showLibrary = true
                     }
                 }
@@ -232,7 +235,7 @@ struct DraftView: View {
 
     private var StartScreenViewWrapper: some View {
         StartScreenUIView(
-            showContentView: $showContentView,
+            showContentView: $showDraftView,
             wordGoal: $wordGoal,
             timedMode: .constant(false),  // no longer used make it false
             difficulty: .constant(difficulty),
@@ -253,5 +256,22 @@ struct DraftView: View {
             confettiTrigger += 1
             hareLogic.userFinished()
         }
+    }
+}
+
+struct PushDownButtonStyle: ButtonStyle {
+    @Environment(\.isEnabled) private var isEnabled
+
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .bold()
+            .foregroundStyle(.white)
+            .padding(.vertical, 5)
+            .padding(.horizontal, 20)
+            .background(
+                isEnabled ? Color.green : Color.gray.opacity(0.4), in: Capsule()
+            )
+            .opacity(configuration.isPressed ? 0.75 : 1)
+            .conditionalEffect(.pushDown, condition: configuration.isPressed)
     }
 }
