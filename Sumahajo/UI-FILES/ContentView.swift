@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  Sumahajo
 //
-//  Created by Su Thiri Kyaw on 4/7/25.
+// 
 //
 
 import SwiftUI
